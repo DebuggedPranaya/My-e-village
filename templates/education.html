@@ -1,0 +1,453 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Education Support — My e-Village Wai</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22currentColor%22%20class%3D%22bi%20bi-house-heart-fill%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M7.293%201.5a1%201%200%200%201%201.414%200L11%203.793V2.5a.5.5%200%200%201%20.5-.5h1a.5.5%200%200%201%20.5.5v3.293l2.354%202.353a.5.5%200%200%201-.708.707L8%202.207%201.354%208.853a.5.5%200%201%201-.708-.707z%22/%3E%3Cpath%20d%3D%22m14%209.293-6-6-6%206V13.5A1.5%201.5%200%200%200%203.5%2015h9a1.5%201.5%200%200%200%201.5-1.5zm-6-.811c1.664-1.673%205.825%201.254%200%205.018-5.825-3.764-1.664-6.691%200-5.018%22/%3E%3C/svg%3E">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main template CSS -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- Custom CSS — loaded AFTER main.css to override Bootstrap where needed -->
+  <link href="{% static 'assets/css/header-hero.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/education.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/footer.css' %}" rel="stylesheet">
+
+  <style>
+   
+    body { padding-top: 0 ; }
+    .ed-hero { margin-top: 0; }
+  </style>
+
+  <div id="google_translate_element" style="display:none;"></div>
+
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'mr',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <div class="ev-topbar">
+    <a class="ev-logo" href="{% url 'home' %}">
+      <div class="ev-logo-icon">
+        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2L2 7v9h5v-5h4v5h5V7L9 2z"/>
+        </svg>
+      </div>
+      <span class="ev-logo-name">My e<span class="ev-logo-accent">Village</span></span>
+    </a>
+    <ul class="ev-nav">
+      <li class="ev-nav-item"><a class="ev-nav-link" href="{% url 'home' %}">Home</a></li>
+      <li class="ev-nav-item"><a class="ev-nav-link" href="{% url 'about' %}">About village</a></li>
+      <li class="ev-nav-item ev-has-dropdown">
+        <span class="ev-nav-trigger">Services
+          <svg class="ev-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg>
+        </span>
+        <div class="ev-dropdown">
+          <a class="ev-dropdown-link ev-active" href="{% url 'education' %}">
+            <div class="ev-dropdown-icon dd-edu">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l6-3 6 3-6 3-6-3z"/><path d="M6 7.5v4c0 1 1 1.5 2 1.5s2-.5 2-1.5v-4"/><path d="M14 5v4"/></svg>
+            </div>
+            Education support
+          </a>
+          <a class="ev-dropdown-link" href="{% url 'agriculture' %}">
+            <div class="ev-dropdown-icon dd-agri">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V7"/><path d="M4 10c0-4 4-6 4-6s4 2 4 6a4 4 0 01-8 0z"/></svg>
+            </div>
+            Agriculture
+          </a>
+        </div>
+      </li>
+      <li class="ev-nav-item"><a class="ev-nav-link" href="{% url 'infrastructure' %}">Infrastructure</a></li>
+      <li class="ev-nav-item"><a class="ev-nav-link" href="{% url 'economy' %}">Economy</a></li>
+    </ul>
+    <div class="ev-nav-right">
+      <div class="ev-lang">
+        <button class="ev-lang-btn ev-lang-active" id="evLangEn">EN</button>
+        <button class="ev-lang-btn" id="evLangMr">मरा</button>
+      </div>
+      <div class="ev-nav-sep"></div>
+      <a class="ev-btn-contact" href="{% url 'contact' %}">Contact</a>
+    </div>
+    <button class="ev-hamburger" id="evHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="ev-mobile-nav" id="evMobileNav">
+    <a class="ev-mobile-link" href="{% url 'home' %}">Home</a>
+    <a class="ev-mobile-link" href="{% url 'about' %}">About village</a>
+    <a class="ev-mobile-link" href="{% url 'education' %}">Education support</a>
+    <a class="ev-mobile-link" href="{% url 'agriculture' %}">Agriculture</a>
+    <a class="ev-mobile-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+    <a class="ev-mobile-link" href="{% url 'economy' %}">Economy</a>
+    <a class="ev-mobile-link" href="{% url 'contact' %}">Contact</a>
+    <div class="ev-mobile-lang">
+      <button class="ev-lang-btn ev-lang-active" id="evMobLangEn">EN</button>
+      <button class="ev-lang-btn" id="evMobLangMr">मरा</button>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="ed-hero">
+  
+    <div class="ed-hero-inner">
+      <p class="ed-breadcrumb">
+        <a href="index.html">Home</a><span>›</span>Services<span>›</span>Education support
+      </p>
+      <h1 class="ed-hero-title">Education in <span class="ed-hero-accent">Mahu</span></h1>
+      <p class="ed-hero-sub">Schools, scholarships, skill training and digital literacy — all in one place.</p>
+    </div>
+  </div>
+
+  <!-- TWO-COLUMN LAYOUT -->
+  <div class="ed-body">
+
+    <!-- Sidebar -->
+    <aside class="ed-sidebar">
+      <p class="ed-sidebar-label">Education</p>
+      <a class="ed-sidebar-link ed-sidebar-active" data-panel="schools" href="#">
+        <div class="ed-sidebar-icon si-blue">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l6-4 6 4v8H2V6z"/><path d="M6 14V9h4v5"/></svg>
+        </div>
+        Schools in Wai
+      </a>
+      <a class="ed-sidebar-link" data-panel="scholarships" href="#">
+        <div class="ed-sidebar-icon si-green">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5l6-3 6 3-6 3-6-3z"/><path d="M6 7.5v4c0 1 1 1.5 2 1.5s2-.5 2-1.5v-4"/><path d="M14 5v4"/></svg>
+        </div>
+        Scholarship schemes
+      </a>
+      <a class="ed-sidebar-link" data-panel="skills" href="#">
+        <div class="ed-sidebar-icon si-amber">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3 2.7-5 6-5s6 2 6 5"/></svg>
+        </div>
+        Skill development
+      </a>
+      <a class="ed-sidebar-link" data-panel="digital" href="#">
+        <div class="ed-sidebar-icon si-purple">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="8" rx="1.5"/><path d="M5 14h6M8 11v3"/></svg>
+        </div>
+        Digital literacy
+      </a>
+      <div class="ed-sidebar-divider"></div>
+      <p class="ed-sidebar-label">Quick contact</p>
+      <a class="ed-sidebar-link" href="tel:+912012345678">
+        <div class="ed-sidebar-icon si-blue">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10.5c0 .3-.1.6-.2.9-.1.3-.4.6-.7.8-.5.3-1 .4-1.6.3-1-.2-2-.6-2.9-1.2-1-.7-1.8-1.5-2.4-2.5-.6-.9-1-1.9-1.1-2.9-.1-.5 0-1 .3-1.5.2-.4.5-.6.9-.8l.3-.1c.2 0 .4.1.5.3l1.1 1.7.1.4c0 .2-.1.3-.2.5l-.3.4-.1.2c.1.3.3.6.5.8.3.4.6.7 1 1 .2.1.4.3.7.4l.2-.2c.1-.2.3-.3.5-.3l.4.1 1.7 1c.2.1.3.3.3.5v.1z"/></svg>
+        </div>
+        GP Education helpline
+      </a>
+      <a class="ed-sidebar-link" href="tel:18001208040">
+  <div class="ed-sidebar-icon si-green">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10.5c0 .3-.1.6-.2.9-.1.3-.4.6-.7.8-.5.3-1 .4-1.6.3-1-.2-2-.6-2.9-1.2-1-.7-1.8-1.5-2.4-2.5-.6-.9-1-1.9-1.1-2.9-.1-.5 0-1 .3-1.5.2-.4.5-.6.9-.8l.3-.1c.2 0 .4.1.5.3l1.1 1.7.1.4c0 .2-.1.3-.2.5l-.3.4-.1.2c.1.3.3.6.5.8.3.4.6.7 1 1 .2.1.4.3.7.4l.2-.2c.1-.2.3-.3.5-.3l.4.1 1.7 1c.2.1.3.3.3.5v.1z"/></svg>
+  </div>
+  MahaDBT helpline (free)
+</a>
+<a class="ed-sidebar-link" href="tel:01206619540">
+  <div class="ed-sidebar-icon si-purple">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10.5c0 .3-.1.6-.2.9-.1.3-.4.6-.7.8-.5.3-1 .4-1.6.3-1-.2-2-.6-2.9-1.2-1-.7-1.8-1.5-2.4-2.5-.6-.9-1-1.9-1.1-2.9-.1-.5 0-1 .3-1.5.2-.4.5-.6.9-.8l.3-.1c.2 0 .4.1.5.3l1.1 1.7.1.4c0 .2-.1.3-.2.5l-.3.4-.1.2c.1.3.3.6.5.8.3.4.6.7 1 1 .2.1.4.3.7.4l.2-.2c.1-.2.3-.3.5-.3l.4.1 1.7 1c.2.1.3.3.3.5v.1z"/></svg>
+  </div>
+  NSP helpline
+</a>
+    </aside>
+
+    <!-- Main content -->
+    <main class="ed-main">
+
+      <!-- Schools -->
+      <div class="ed-panel ed-panel-active" id="panel-schools">
+        <p class="ed-section-eyebrow">Schools in Wai</p>
+        <h2 class="ed-section-heading">Educational institutions</h2>
+        <p class="ed-section-sub">Wai has three schools serving students from Class 1 through Class 12, with instruction available in Marathi and semi-English mediums.</p>
+        <div class="ed-school-list">
+          <div class="ed-school-card">
+            <div>
+              <p class="ed-school-name">Zilla Parishad Primary School, Mahu</p>
+              <div class="ed-school-meta">
+                <span class="ed-pill pill-green">Class 1–7</span>
+                <span class="ed-pill pill-gray">Marathi medium</span>
+                <span class="ed-pill pill-amber">Government</span>
+              </div>
+              <p class="ed-school-location">Near Gram Panchayat office · Mon–Sat</p>
+            </div>
+            <div class="ed-school-right">
+              <p class="ed-school-students">284</p>
+              <p class="ed-school-students-lbl">Students</p>
+              <p class="ed-school-timing">7:30 AM – 1:00 PM</p>
+            </div>
+          </div>
+          <div class="ed-school-card">
+            <div>
+              <p class="ed-school-name">Wai Vidyalaya (Secondary School)</p>
+              <div class="ed-school-meta">
+                <span class="ed-pill pill-blue">Class 8–10</span>
+                <span class="ed-pill pill-gray">Semi-English medium</span>
+                <span class="ed-pill pill-amber">Government aided</span>
+              </div>
+              <p class="ed-school-location">Village centre · Mon–Sat</p>
+            </div>
+            <div class="ed-school-right">
+              <p class="ed-school-students">196</p>
+              <p class="ed-school-students-lbl">Students</p>
+              <p class="ed-school-timing">7:00 AM – 12:30 PM</p>
+            </div>
+          </div>
+          <div class="ed-school-card">
+            <div>
+              <p class="ed-school-name">Wai Junior College</p>
+              <div class="ed-school-meta">
+                <span class="ed-pill pill-blue">Class 11–12</span>
+                <span class="ed-pill pill-gray">Arts & Science</span>
+                <span class="ed-pill pill-amber">Government aided</span>
+              </div>
+              <p class="ed-school-location">Near bus stand · Mon–Sat</p>
+            </div>
+            <div class="ed-school-right">
+              <p class="ed-school-students">118</p>
+              <p class="ed-school-students-lbl">Students</p>
+              <p class="ed-school-timing">7:00 AM – 12:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scholarships -->
+      <div class="ed-panel" id="panel-scholarships">
+        <p class="ed-section-eyebrow">Scholarship schemes</p>
+        <h2 class="ed-section-heading">Funding your education</h2>
+        <p class="ed-section-sub">Central and state government scholarships available to eligible students of Mahu. Apply through the GP office or online portals listed below.</p>
+        <a href="https://mahadbt.maharashtra.gov.in/SchemeData/SchemeDescription?SchemeID=..." 
+       target="_blank" class="ed-scheme-link">Apply on MahaDBT →</a>
+        <div class="ed-scheme-list">
+          <div class="ed-scheme-card sc-central">
+            <div class="ed-scheme-top"><p class="ed-scheme-name">PM YASASVI Scholarship</p><p class="ed-scheme-amount">Up to ₹1,00,000/yr</p></div>
+            <p class="ed-scheme-desc">For OBC, EBC & DNT students in Class 9–12 and undergraduate level. Merit-cum-means based. Apply via the National Scholarship Portal.</p>
+            <a href="https://scholarships.gov.in" target="_blank" class="ed-scheme-link" style="font-size: 13px; font-weight: 800;">Apply on NSP →</a>
+            <div class="ed-scheme-footer"><span class="ed-pill pill-blue">Central govt</span><span class="ed-pill pill-gray">Class 9 onwards</span><span class="ed-pill pill-green">NSP portal</span></div>
+          </div>
+          <div class="ed-scheme-card sc-state">
+            <div class="ed-scheme-top"><p class="ed-scheme-name">Swadhar Greh Scheme (Maharashtra)</p><p class="ed-scheme-amount">₹51,000/yr</p></div>
+            <p class="ed-scheme-desc">For SC/Nav-Buddha students in Class 11 & above living away from home for education. Covers lodging, board, and academic expenses.</p>
+            <div class="ed-scheme-footer"><span class="ed-pill pill-green">State govt</span><span class="ed-pill pill-gray">Class 11 onwards</span><span class="ed-pill pill-amber">MahaDBT portal</span></div>
+          </div>
+          <div class="ed-scheme-card sc-obc">
+            <div class="ed-scheme-top"><p class="ed-scheme-name">Rajarshi Shahu Maharaj Scholarship</p><p class="ed-scheme-amount">₹5,000–₹25,000</p></div>
+            <p class="ed-scheme-desc">Maharashtra state scholarship for economically backward students (EBC). Available for Class 5 through graduation. Apply at the Taluka office.</p>
+            <div class="ed-scheme-footer"><span class="ed-pill pill-gray">EBC category</span><span class="ed-pill pill-gray">Class 5 onwards</span><span class="ed-pill pill-amber">Taluka office</span></div>
+          </div>
+          <div class="ed-scheme-card sc-state">
+            <div class="ed-scheme-top"><p class="ed-scheme-name">Savitribai Phule Scholarship (Girls)</p><p class="ed-scheme-amount">₹600/month</p></div>
+            <p class="ed-scheme-desc">For girls from SC/ST families studying in Class 5–10. Aims to reduce dropout rates and encourage girls' education in rural areas.</p>
+            <div class="ed-scheme-footer"><span class="ed-pill pill-green">Girls only</span><span class="ed-pill pill-gray">Class 5–10</span><span class="ed-pill pill-amber">School office</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill development -->
+      <div class="ed-panel" id="panel-skills">
+        <p class="ed-section-eyebrow">Skill development</p>
+        <h2 class="ed-section-heading">Vocational training in Wai</h2>
+        <p class="ed-section-sub">Practical skills training programmes available at the Gram Panchayat centre and nearby institutes for youth, women, and farmers.</p>
+        <div class="ed-skill-grid">
+          <div class="ed-skill-card">
+            <div class="ed-skill-icon sk-pink"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l4-4 3 3 5-8"/></svg></div>
+            <p class="ed-skill-name">Tailoring & stitching</p>
+            <p class="ed-skill-org">Mahila Gat, Wai</p>
+            <p class="ed-skill-desc">3-month certificate course for women. Covers basic stitching, blouse making, and salwar suit. Batches run twice a year at the GP centre.</p>
+          </div>
+          <div class="ed-skill-card">
+            <div class="ed-skill-icon sk-amber"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="4" height="8" rx="1"/><rect x="7" y="5" width="4" height="11" rx="1"/><rect x="12" y="2" width="4" height="14" rx="1"/></svg></div>
+            <p class="ed-skill-name">Agri-business management</p>
+            <p class="ed-skill-org">Krishi Vigyan Kendra, Pune</p>
+            <p class="ed-skill-desc">6-day residential workshop on crop planning, market linkage, and post-harvest handling. Free for registered farmers of Mahu.</p>
+          </div>
+          <div class="ed-skill-card">
+            <div class="ed-skill-icon sk-teal"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 2"/></svg></div>
+            <p class="ed-skill-name">Electrical & solar repair</p>
+            <p class="ed-skill-org">ITI Haveli, Pune</p>
+            <p class="ed-skill-desc">Short-term trade course on basic wiring, solar panel installation, and maintenance. Govt-certified. Transport support from Mahu available.</p>
+          </div>
+          <div class="ed-skill-card">
+            <div class="ed-skill-icon sk-blue"><svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="14" height="10" rx="1.5"/><path d="M6 16h6M9 13v3"/><path d="M5 7h8M5 10h5"/></svg></div>
+            <p class="ed-skill-name">Basic computer operations</p>
+            <p class="ed-skill-org">GP Digital Centre, Wai</p>
+            <p class="ed-skill-desc">30-hour beginner course covering MS Office, internet, email, and govt portal usage. Available in Marathi. Batches every month.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Digital literacy -->
+      <div class="ed-panel" id="panel-digital">
+        <p class="ed-section-eyebrow">Digital literacy</p>
+        <h2 class="ed-section-heading">Going digital in Wai</h2>
+        <p class="ed-section-sub">Free and low-cost programmes to help every resident — from students to elders — use smartphones, government portals, and the internet confidently.</p>
+        <div class="ed-digi-list">
+        <!--  <div class="ed-digi-row"><div><p class="ed-digi-name">Smartphone basics workshop</p><p class="ed-digi-desc">Calling, WhatsApp, UPI payments, and government app usage. Held every Saturday at GP centre.</p></div><span class="ed-digi-badge db-free">Free</span></div> -->
+          <div class="ed-digi-row"><div><p class="ed-digi-name">DigiLocker & e-documents</p><p class="ed-digi-desc">How to store and access Aadhaar, ration card, and certificates digitally. One-on-one sessions available.</p> <a href="https://digilocker.gov.in" target="_blank" class="ed-scheme-link" style="font-size: 13px ; font-weight: 800;">Open DigiLocker →</a></div><span class="ed-digi-badge db-free">Free</span></div>
+          <div class="ed-digi-row"><div><p class="ed-digi-name">Online government services</p><p class="ed-digi-desc">MahaDBT, NSP, Jan Seva Kendra portals — how to apply for schemes and check application status online.</p><a href="https://mahadbt.maharashtra.gov.in" target="_blank" class="ed-scheme-link" style="font-size: 13px ; font-weight: 800;">Go to MahaDBT →</a></div><span class="ed-digi-badge db-weekly">Weekly</span></div>
+          <div class="ed-digi-row"><div><p class="ed-digi-name">PM e-VIDYA (DIKSHA app)</p><p class="ed-digi-desc">Free learning content for Class 1–12 students in Marathi. Access NCERT lessons, videos, and practice tests anytime.</p><a href="https://diksha.gov.in" target="_blank" class="ed-scheme-link" style="font-size: 13px ; font-weight: 800;">Open DIKSHA →</a></div><span class="ed-digi-badge db-online">Online</span></div>
+        <!--  <div class="ed-digi-row"><div><p class="ed-digi-name">Digital financial literacy</p><p class="ed-digi-desc">UPI safety, avoiding online fraud, and using banking apps. Especially designed for women's SHG members.</p></div><span class="ed-digi-badge db-free">Free</span></div> -->
+          <div class="ed-digi-row"><div><p class="ed-digi-name">MS-CIT certificate course</p><p class="ed-digi-desc">Maharashtra State government's computer literacy certificate. Valid for govt job applications. Nearest centre: Haveli.</p><a href="https://www.mkcl.org" target="_blank" class="ed-scheme-link" style="font-size: 13px ; font-weight: 800;">Visit MKCL →</a></div><span class="ed-digi-badge db-cert">Certified</span></div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2L2 7v9h5v-5h4v5h5V7L9 2z"/></svg>
+          </div>
+          <span class="footer-logo-text">My e<span class="footer-logo-accent">Village</span></span>
+        </div>
+        <p class="footer-tagline">A smart village initiative bringing digital governance, clean energy, and community progress to every household.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M9.5 3H11V1h-1.5C7.6 1 7 2.1 7 3.5V5H5.5v2H7v7h2V7h1.5l.5-2H9V3.5c0-.3.2-.5.5-.5z"/></svg></a>
+          <a class="social-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="3.5"/><circle cx="8" cy="8" r="2.8"/><circle cx="11.2" cy="4.8" r=".5" fill="currentColor" stroke="none"/></svg></a>
+          <a class="social-btn" href="#" aria-label="YouTube"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 4.5S13.2 3 12 3H4C2.8 3 2.5 4.5 2.5 4.5S2 6 2 7.5v1C2 10 2.5 11.5 2.5 11.5S2.8 13 4 13h8c1.2 0 1.5-1.5 1.5-1.5S14 10 14 8.5v-1c0-1.5-.5-3-.5-3zM6.5 10V6l4 2-4 2z"/></svg></a>
+          <a class="social-btn" href="#" aria-label="WhatsApp"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5A6.5 6.5 0 0 0 2.2 11L1.5 14.5l3.6-.7A6.5 6.5 0 1 0 8 1.5zm0 1.2a5.3 5.3 0 1 1-2.8 9.8l-.2-.1-2.1.4.4-2-.1-.2A5.3 5.3 0 0 1 8 2.7zm-1.8 2.8c-.2 0-.4.1-.6.3-.2.2-.7.7-.7 1.7s.7 2 .8 2.1c.1.1 1.4 2.2 3.4 3 .5.2.9.3 1.2.4.5.1 1 .1 1.3-.1.4-.2.6-.8.7-1.1 0-.2 0-.3-.1-.4l-.9-.4c-.1 0-.2-.1-.4.1l-.5.6c-.1.1-.2.1-.3.1-.2-.1-.7-.3-1.3-.8-.5-.4-.8-1-.9-1.1 0-.1 0-.2.1-.3l.3-.3c.1-.1.1-.2.2-.3v-.3l-.4-1c-.1-.2-.2-.3-.4-.3h-.4z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-heading">Contact us</p>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10.5c0 .3-.1.6-.2.9-.1.3-.4.6-.7.8-.5.3-1 .4-1.6.3-1-.2-2-.6-2.9-1.2-1-.7-1.8-1.5-2.4-2.5-.6-.9-1-1.9-1.1-2.9-.1-.5 0-1 .3-1.5.2-.4.5-.6.9-.8.1 0 .2-.1.3-.1.2 0 .4.1.5.3l1.1 1.7c.1.1.1.3.1.4 0 .2-.1.3-.2.5l-.3.4c0 .1-.1.1-.1.2.1.3.3.6.5.8.3.4.6.7 1 1 .2.1.4.3.7.4l.2-.2c.1-.2.3-.3.5-.3.1 0 .3 0 .4.1l1.7 1c.2.1.3.3.3.5v.1z"/></svg></div>
+          <div><p class="contact-label">Helpline</p><a class="contact-value" href="tel:+912012345678">+91 20 1234 5678</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="12" height="9" rx="1.5"/><path d="M2 4l6 5 6-5"/></svg></div>
+          <div><p class="contact-label">Email</p><a class="contact-value" href="/cdn-cgi/l/email-protection#4c25222a230c3b2d25293a2520202d2b29622b233a622522"><span class="__cf_email__" data-cfemail="4c25222a230c3b2d25293a2520202d2b29622b233a622522">[email&#160;protected]</span></a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6.5" r="2.2"/><path d="M8 2C5.2 2 3 4.2 3 7c0 3.5 5 8 5 8s5-4.5 5-8c0-2.8-2.2-5-5-5z"/></svg></div>
+          <div><p class="contact-label">Office hours</p><p class="contact-value" style="cursor:default;">Mon–Sat, 10 AM – 5 PM</p></div>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-heading">Gram Panchayat</p>
+        <div class="gp-block">
+          <p class="gp-name">ग्रामपंचायत, Wai</p>
+          <p class="gp-sub">Tal. [Haveli] · Dist. [Pune]<br>Maharashtra — 411 000</p>
+          <div class="gp-badge-row">
+            <span class="gp-badge">Est. 1956</span>
+            <span class="gp-badge">ISO certified</span>
+            <span class="gp-badge">Smart village 2021</span>
+            <span class="gp-badge">9 wards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 <span>e-Village, Wai Gram Panchayat.</span> All rights reserved.</p>
+      <div class="footer-lang">
+        <button class="lang-btn active" onclick="this.classList.add('active');this.nextElementSibling.classList.remove('active')">English</button>
+        <button class="lang-btn" onclick="this.classList.add('active');this.previousElementSibling.classList.remove('active')">मराठी</button>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <script>
+    const ham = document.getElementById('evHamburger');
+    const mob = document.getElementById('evMobileNav');
+    if (ham) ham.addEventListener('click', () => {
+      mob.classList.toggle('ev-mobile-nav--open');
+      ham.classList.toggle('ev-hamburger--open');
+    });
+
+    function makeLangToggle(a, b) {
+      const btnA = document.getElementById(a);
+      const btnB = document.getElementById(b);
+      if (!btnA || !btnB) return;
+      [btnA, btnB].forEach(btn => btn.addEventListener('click', () => {
+        btnA.classList.toggle('ev-lang-active');
+        btnB.classList.toggle('ev-lang-active');
+      }));
+    }
+    makeLangToggle('evLangEn', 'evLangMr');
+    makeLangToggle('evMobLangEn', 'evMobLangMr');
+
+
+     function translateTo(lang) {
+  const select = document.querySelector(".goog-te-combo");
+  if (!select) return;
+
+  select.value = lang;
+  select.dispatchEvent(new Event("change"));
+}
+
+document.getElementById("evLangEn").onclick = () => translateTo("en");
+
+    // Sidebar tab switching
+    const sidebarLinks = document.querySelectorAll('.ed-sidebar-link[data-panel]');
+    const panels = document.querySelectorAll('.ed-panel');
+
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = this.dataset.panel;
+
+        // Update active sidebar link
+        sidebarLinks.forEach(l => l.classList.remove('ed-sidebar-active'));
+        this.classList.add('ed-sidebar-active');
+
+        // Show the matching panel, hide others
+        panels.forEach(panel => {
+          if (panel.id === 'panel-' + target) {
+            panel.classList.add('ed-panel-active');
+          } else {
+            panel.classList.remove('ed-panel-active');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

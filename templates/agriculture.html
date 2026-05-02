@@ -1,0 +1,575 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body class="trainers-page">
+
+  
+  {% include 'header.html' %}
+  
+  <main class="main">
+
+    <div class="ag-section" id="s-crops">
+    <div class="ag-section-label-col">
+      <p class="ag-section-num">01</p>
+      <p class="ag-section-title">Crops & Farming</p>
+    </div>
+    <div class="ag-section-content">
+ 
+      <div class="ag-crops-header">
+        <p class="ag-crops-eyebrow">What grows in Wai</p>
+        <h2 class="ag-crops-heading">Agriculture of Wai</h2>
+      <!-- <p class="ag-crops-intro">Wai's fertile black soil and access to the Mula-Mutha river support a diverse range of crops across three seasons — Kharif, Rabi, and Zaid. Replace placeholder details below with actual figures after your research.</p> -->
+      </div>
+ 
+      <div class="ag-crop-grid">
+        <!-- Rice -->
+        <div class="ag-crop-card">
+          <span class="ag-crop-emoji"></span>
+         <p class="ag-crop-type">Kharif · Cereal</p> 
+          <p class="ag-crop-name">Rice</p>
+          <p class="ag-crop-desc"> Grown during the monsoon season on low-lying fields with adequate water retention. Staple crop for local consumption and regional markets.</p>
+          <div class="ag-crop-tags">
+            <span class="ag-crop-tag tag-season">Jun – Nov</span>
+            
+            <span class="ag-crop-tag">Water-intensive</span>
+          </div>
+        </div>
+        <!-- Sugarcane -->
+        <div class="ag-crop-card">
+          <span class="ag-crop-emoji"></span>
+          <p class="ag-crop-type">Annual · Cash crop</p>
+          <p class="ag-crop-name">Sugarcane</p>
+          <p class="ag-crop-desc"> The backbone of Wai's agricultural economy. Grown on large landholdings and supplied to nearby sugar mills.</p>
+          <div class="ag-crop-tags">
+            <span class="ag-crop-tag tag-season">Year-round</span>
+            
+            <span class="ag-crop-tag">Cash crop</span>
+          </div>
+        </div>
+        <!-- Flowering Crops -->
+        <div class="ag-crop-card">
+          <span class="ag-crop-emoji"></span>
+          <p class="ag-crop-type">Seasonal · Horticulture</p>
+          <p class="ag-crop-name">Flowering crops</p>
+          <p class="ag-crop-desc"> Marigold, jasmine, and other flowers cultivated for local mandis and religious markets.High-value crop popular among smallholders.</p>
+          <div class="ag-crop-tags">
+            <span class="ag-crop-tag tag-season">Oct – Mar</span>
+            <span class="ag-crop-tag tag-yield">High value</span>
+            <span class="ag-crop-tag">Mandi sold</span>
+          </div>
+        </div>
+        <!-- Grapes -->
+        <div class="ag-crop-card">
+          <span class="ag-crop-emoji"></span>
+          <p class="ag-crop-type">Zaid · Fruit</p>
+          <p class="ag-crop-name">Grapes</p>
+          <p class="ag-crop-desc">Table and wine grapes grown in the drier western belt of Wai. Grape vineyards supply Pune and Nashik markets. Growing export potential.</p>
+          <div class="ag-crop-tags">
+            <span class="ag-crop-tag tag-season">Dec – Apr</span>
+            
+            <span class="ag-crop-tag">Export quality</span>
+          </div>
+        </div>
+        <!-- Jowar (placeholder) -->
+        <div class="ag-crop-card">
+          <span class="ag-crop-emoji"></span>
+          <p class="ag-crop-type">Rabi · Cereal</p>
+          <p class="ag-crop-name">Jowar</p>
+          <p class="ag-crop-desc">Traditional dryland crop grown on upland black soil. Drought-tolerant and important for food security.</p>
+          <div class="ag-crop-tags">
+            <span class="ag-crop-tag tag-season">Oct – Feb</span>
+            <span class="ag-crop-tag">Dryland</span>
+            <span class="ag-crop-tag">Fodder</span>
+          </div>
+        </div>
+        <!-- Vegetables (placeholder) -->
+        <div class="ag-crop-card">
+          <span class="ag-crop-emoji"></span>
+          <p class="ag-crop-type">Year-round · Vegetables</p>
+          <p class="ag-crop-name">Seasonal vegetables</p>
+          <p class="ag-crop-desc">Tomato, onion, and leafy greens grown by smallholders near the village. Sold at Pune APMC and local weekly markets.</p>
+          <div class="ag-crop-tags">
+            <span class="ag-crop-tag tag-season">All seasons</span>
+            <span class="ag-crop-tag">Local market</span>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Seasonal calendar -->
+     <!-- <div class="ag-calendar">
+        <div class="ag-calendar-head">
+          <p class="ag-calendar-head-crop">Crop</p>
+          <p class="ag-calendar-month">Jan</p>
+          <p class="ag-calendar-month">Feb</p>
+          <p class="ag-calendar-month">Mar</p>
+          <p class="ag-calendar-month">Apr</p>
+          <p class="ag-calendar-month">May</p>
+          <p class="ag-calendar-month">Jun</p>
+          <p class="ag-calendar-month">Jul</p>
+          <p class="ag-calendar-month">Aug</p>
+          <p class="ag-calendar-month">Sep</p>
+          <p class="ag-calendar-month">Oct</p>
+          <p class="ag-calendar-month">Nov</p>
+          <p class="ag-calendar-month">Dec</p>
+        </div>
+         Rice: sow Jun-Jul, grow Aug-Oct, harvest Nov 
+        <div class="ag-calendar-row">
+          <p class="ag-calendar-crop-name">Rice</p>
+          <div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-sow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-sow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-harv"></div></div>
+          <div class="ag-calendar-cell"></div>
+        </div>
+        <!-- Sugarcane: year-round grow, harvest Mar-Apr 
+        <div class="ag-calendar-row">
+          <p class="ag-calendar-crop-name">Sugarcane</p>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-harv"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-harv"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-sow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+        </div>
+        <!-- Flowers: sow Oct, grow Nov-Jan, harvest Feb-Mar 
+        <div class="ag-calendar-row">
+          <p class="ag-calendar-crop-name">Flowers</p>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-harv"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-harv"></div></div>
+          <div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-sow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+        </div>
+        <!-- Grapes
+        <div class="ag-calendar-row">
+          <p class="ag-calendar-crop-name">Grapes</p>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-harv"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-harv"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-harv"></div></div>
+          <div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div><div class="ag-calendar-cell"></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-sow"></div></div>
+          <div class="ag-calendar-cell"><div class="ag-cal-dot cal-grow"></div></div>
+        </div>
+        <div class="ag-cal-legend">
+          <div class="ag-cal-legend-item"><div class="ag-cal-legend-dot cal-sow"></div> Sowing</div>
+          <div class="ag-cal-legend-item"><div class="ag-cal-legend-dot cal-grow"></div> Growing</div>
+          <div class="ag-cal-legend-item"><div class="ag-cal-legend-dot cal-harv"></div> Harvest</div>
+        </div>
+      </div> -->
+ 
+    </div>
+  </div> 
+
+ 
+  <div class="ag-section" id="s-schemes" style="background:#fafbf9;">
+    <div class="ag-section-label-col" style="background:#fafbf9;">
+      <p class="ag-section-num">02</p>
+      <p class="ag-section-title">Govt. Schemes</p>
+    </div>
+    <div class="ag-section-content">
+      <h2 class="ag-schemes-heading">Support for<br>Wai's farmers</h2>
+      <p class="ag-schemes-sub">Central and state government schemes available to registered farmers of Wai. Apply through the Gram Panchayat office or the links below.</p>
+ 
+      <div class="ag-scheme-list">
+        <div class="ag-scheme-row">
+          <div>
+            <p class="ag-scheme-name">PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)</p>
+            <p class="ag-scheme-desc">Direct income support of ₹6,000/year in three instalments to all eligible farmer families. Register via PM-KISAN portal or GP office.</p>
+          </div>
+          <div>
+            <p class="ag-scheme-amount">₹6,000/yr</p>
+            <p class="ag-scheme-amount-lbl">Per family</p>
+          </div>
+          <span class="ag-scheme-pill sp-central">Central Government</span>
+          <a href="https://pmkisan.gov.in" target="_blank" class="ag-scheme-link-btn">Apply →</a>
+        </div>
+        <!--<div class="ag-scheme-row">
+          <div>
+            <p class="ag-scheme-name">PMFBY — Pradhan Mantri Fasal Bima Yojana</p>
+            <p class="ag-scheme-desc">Crop insurance covering losses from natural calamities, pests, and diseases. Low premium for Kharif and Rabi crops. Enrol before sowing.</p>
+          </div>
+          <div>
+            <p class="ag-scheme-amount">2% premium</p>
+            <p class="ag-scheme-amount-lbl">Kharif crops</p>
+          </div>
+          <span class="ag-scheme-pill sp-central">Central</span>
+          <a href="https://pmfby.gov.in" target="_blank" class="ag-scheme-link-btn">Apply →</a>
+        </div> -->
+       <!-- <div class="ag-scheme-row">
+          <div>
+            <p class="ag-scheme-name">Kisan Credit Card (KCC)</p>
+            <p class="ag-scheme-desc">Short-term credit for crop cultivation, post-harvest expenses, and allied activities at concessional interest rates. Apply at nearest bank or GP.</p>
+          </div>
+          <div>
+            <p class="ag-scheme-amount">4% p.a.</p>
+            <p class="ag-scheme-amount-lbl">Interest rate</p>
+          </div>
+          <span class="ag-scheme-pill sp-central">Central</span>
+          <a href="https://www.nabard.org" target="_blank" class="ag-scheme-link-btn">Know more →</a>
+        </div> -->
+        <div class="ag-scheme-row">
+          <div>
+            <p class="ag-scheme-name">Magel Tyala Shet Tale (Maharashtra)</p>
+            <p class="ag-scheme-desc">State scheme providing farm ponds to individual farmers for water storage and conservation. Apply through the Agriculture Department, Pune.</p>
+          </div>
+          <div>
+            <p class="ag-scheme-amount">100% subsidy</p>
+            <p class="ag-scheme-amount-lbl">SC/ST farmers</p>
+          </div>
+          <span class="ag-scheme-pill sp-state">State Government</span>
+          <a href="https://mahadbt.maharashtra.gov.in" target="_blank" class="ag-scheme-link-btn">MahaDBT →</a>
+        </div>
+        <div class="ag-scheme-row">
+          <div>
+            <p class="ag-scheme-name">Drip & Sprinkler Irrigation Subsidy</p>
+            <p class="ag-scheme-desc">Maharashtra government subsidy on micro-irrigation equipment. Up to 55% subsidy for general farmers, higher for SC/ST. Apply via MahaDBT portal.</p>
+          </div>
+          <div>
+            <p class="ag-scheme-amount">Up to 55%</p>
+            <p class="ag-scheme-amount-lbl">Subsidy</p>
+          </div>
+          <span class="ag-scheme-pill sp-state">State Government</span>
+          <a href="https://mahadbt.maharashtra.gov.in" target="_blank" class="ag-scheme-link-btn">MahaDBT →</a>
+        </div>
+      </div>
+ 
+      <!-- <div class="ag-helpline-strip">
+        <div>
+          <p class="ag-helpline-label">Kisan Call Centre</p>
+          <p class="ag-helpline-num">1800-180-1551</p>
+          <p class="ag-helpline-desc">Free helpline for farming queries · Available in Marathi · Mon–Sun 6 AM – 10 PM</p>
+        </div>
+        <a href="tel:18001801551" class="ag-helpline-btn">Call now</a> -->
+      </div>
+    </div>
+  </div>
+ 
+ <!--Market & Mandi-->
+  <div class="ag-section" id="s-market">
+    <div class="ag-section-label-col">
+      <p class="ag-section-num">03</p>
+      <p class="ag-section-title">Market & Mandi</p>
+    </div>
+    <div class="ag-section-content">
+      <h2 class="ag-market-heading">Where Wai<br>sells its harvest</h2>
+    <!--  <p class="ag-market-sub">Nearest APMC markets, local weekly bazaars, and current indicative wholesale prices for major crops. Prices are indicative — confirm at the mandi before selling.</p> -->
+ 
+      <div class="ag-market-grid">
+        <div class="ag-market-card">
+          <p class="ag-market-card-label">Primary market</p>
+          <p class="ag-market-card-name">APMC Pune (Gultekdi)</p>
+          <p class="ag-market-card-meta">Maharashtra's largest agricultural market. ~35 km from Wai via NH-65. Open Monday–Saturday, 6 AM – 6 PM. Handles fruits, vegetables, grains, and flowers.</p>
+          <a href="https://maps.google.com/?q=APMC+Pune+Gultekdi" target="_blank" class="ag-market-card-link">Get directions →</a>
+        </div>
+        <div class="ag-market-card">
+          <p class="ag-market-card-label">Local weekly market</p>
+          <p class="ag-market-card-name">Wai Gram Bazaar</p>
+          <p class="ag-market-card-meta"> Weekly market held every Thursday at the village centre. Ideal for vegetables, flowers, and small quantities of grain. No transport cost for local farmers.</p>
+          <a href="{% url 'millbazaar' %}" class="ag-market-card-link">View schedule →</a>
+        </div>
+        <div class="ag-market-card">
+          <p class="ag-market-card-label">Sugar mill</p>
+          <p class="ag-market-card-name">Saakhar Karkhana </p>
+          <p class="ag-market-card-meta"> Sugarcane from Wai is supplied to other Villages. FRP (Fair and Remunerative Price) applies as set by the central government each season.</p>
+          <a href="{% url 'millbazaar' %}" class="ag-market-card-link">Mill details →</a>
+        </div>
+        <div class="ag-market-card">
+          <p class="ag-market-card-label">Online platform</p>
+          <p class="ag-market-card-name">eNAM Portal</p>
+          <p class="ag-market-card-meta">National Agriculture Market — sell produce online across mandis. Register your APMC licence and bank account to start trading. Supported at Pune APMC.</p>
+          <a href="https://enam.gov.in" target="_blank" class="ag-market-card-link">Visit eNAM →</a>
+        </div>
+      </div>
+ 
+      <!-- Price table -->
+    <!-- <div class="ag-price-table">
+        <div class="ag-price-head">
+          <div class="ag-price-head-cell">Crop</div>
+          <div class="ag-price-head-cell">Min (₹/qtl)</div>
+          <div class="ag-price-head-cell">Max (₹/qtl)</div>
+          <div class="ag-price-head-cell">Modal</div>
+        </div>
+        <div class="ag-price-row">
+          <div class="ag-price-crop"><span>🌾</span> Rice (Common)</div>
+          <div class="ag-price-val ag-price-min">[₹ ---]</div>
+          <div class="ag-price-val ag-price-max">[₹ ---]</div>
+          <div class="ag-price-val">[₹ ---]</div>
+        </div>
+        <div class="ag-price-row">
+          <div class="ag-price-crop"><span>🎋</span> Sugarcane</div>
+          <div class="ag-price-val ag-price-min">[₹ ---]</div>
+          <div class="ag-price-val ag-price-max">[₹ ---]</div>
+          <div class="ag-price-val">[₹ ---]</div>
+        </div>
+        <div class="ag-price-row">
+          <div class="ag-price-crop"><span>🌼</span> Marigold</div>
+          <div class="ag-price-val ag-price-min">[₹ ---]</div>
+          <div class="ag-price-val ag-price-max">[₹ ---]</div>
+          <div class="ag-price-val">[₹ ---]</div>
+        </div>
+        <div class="ag-price-row">
+          <div class="ag-price-crop"><span>🍇</span> Grapes (Table)</div>
+          <div class="ag-price-val ag-price-min">[₹ ---]</div>
+          <div class="ag-price-val ag-price-max">[₹ ---]</div>
+          <div class="ag-price-val">[₹ ---]</div>
+        </div>
+        <div class="ag-price-row">
+          <div class="ag-price-crop"><span>🌿</span> Jowar</div>
+          <div class="ag-price-val ag-price-min">[₹ ---]</div>
+          <div class="ag-price-val ag-price-max">[₹ ---]</div>
+          <div class="ag-price-val">[₹ ---]</div>
+        </div>
+      </div>
+      <p class="ag-price-note">* Prices are indicative based on Pune APMC. Replace [₹ ---] with current rates from <a href="https://agmarknet.gov.in" target="_blank" style="color:#1D9E75;">Agmarknet.gov.in</a> after research.</p> -->
+    </div> 
+  </div> 
+ 
+  <!-- ═══════════════════════════════════════
+       SECTION 4 — SOIL & WATER
+  ═══════════════════════════════════════ -->
+  <div class="ag-section" id="s-soil" style="background:#fafbf9;">
+    <div class="ag-section-label-col" style="background:#fafbf9;">
+      <p class="ag-section-num">04</p>
+      <p class="ag-section-title">Soil & Water</p>
+    </div>
+    <div class="ag-section-content">
+      <h2 class="ag-soil-heading">The Water<br>Resources of Wai</h2>
+     <!-- <p class="ag-soil-sub">Wai sits on the Deccan plateau at 762 m above sea level, with a mix of black cotton soil and red laterite. Water is sourced from the Mula-Mutha river and seasonal rainfall.</p> -->
+ 
+     <!-- <div class="ag-soil-cols">
+        <div>
+          <p class="ag-soil-block-title">Soil profile</p>
+          <div class="ag-soil-fact-list">
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Dominant type</span>
+              <span class="ag-soil-fact-val">Black cotton soil (Vertisol)</span>
+            </div>
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">pH range</span>
+              <span class="ag-soil-fact-val">[7.5-8.2 — added after soil test]</span>
+            </div>
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Depth</span>
+              <span class="ag-soil-fact-val">[medium to deep]</span>
+            </div>
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Organic matter</span>
+              <span class="ag-soil-fact-val">[low to medium]</span>
+            </div>
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Best suited for</span>
+              <span class="ag-soil-fact-val">Sugarcane, cotton, jowar, wheat</span>
+            </div>
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Soil Health Card</span>
+              <span class="ag-soil-fact-val">Available at GP office</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="ag-soil-block-title">Rainfall & climate</p>
+          <div class="ag-soil-fact-list">
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Annual rainfall</span>
+              <span class="ag-soil-fact-val">650-750 mm avg</span>
+            </div>
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Monsoon months</span>
+              <span class="ag-soil-fact-val">June – September</span>
+            </div>
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Temperature range</span>
+              <span class="ag-soil-fact-val">[Placeholder] °C – [X] °C</span>
+            </div>
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Drought risk</span>
+              <span class="ag-soil-fact-val">[low to moderate]</span>
+            </div>
+            <div class="ag-soil-fact">
+              <span class="ag-soil-fact-key">Agro-climatic zone</span>
+              <span class="ag-soil-fact-val">Scarcity zone / Western plateau</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+ 
+      <p class="ag-soil-block-title">Water sources</p>
+      <div class="ag-water-cards">
+        <div class="ag-water-card">
+          <p class="ag-water-icon">🏞️</p>
+          <p class="ag-water-name">Mula-Mutha River</p>
+          <p class="ag-water-desc">Primary surface water source. Used for irrigation via lift schemes and canal networks. Flow is seasonal — strongest June–October.</p>
+        </div>
+        <div class="ag-water-card">
+          <p class="ag-water-icon">💧</p>
+          <p class="ag-water-name">Farm ponds</p>
+          <p class="ag-water-desc">farm ponds constructed under state schemes. Store monsoon runoff for dry-season irrigation of vegetables and flowers.</p>
+        </div>
+        <div class="ag-water-card">
+          <p class="ag-water-icon">🌊</p>
+          <p class="ag-water-name">Drip irrigation</p>
+          <p class="ag-water-desc">Drip and sprinkler systems used widely in grape vineyards and sugarcane fields. Subsidised under Maharashtra's micro-irrigation programme.</p>
+        </div>
+      </div>
+ 
+      <div class="ag-shc-cta">
+        <div>
+          <p class="ag-shc-title">Get your Soil Health Card</p>
+          <p class="ag-shc-desc">Every farmer in Wai is entitled to a free Soil Health Card from the government. It tells you exactly which nutrients your soil needs — and saves money on fertilisers. Collect yours at the GP office or apply online.</p>
+        </div>
+        <a href="https://soilhealth.dac.gov.in" target="_blank" class="ag-shc-btn">Apply online →</a>
+      </div>
+ 
+    </div>
+  </div>
+
+    
+  </main>
+
+   <footer class="footer">
+    <div class="footer-top">
+ 
+      <!-- Brand & social -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 2L2 7v9h5v-5h4v5h5V7L9 2z"/>
+            </svg>
+          </div>
+          <span class="footer-logo-text">My e<span class="footer-logo-accent">Village</span></span>
+        </div>
+        <p class="footer-tagline">
+          A smart village initiative bringing digital governance, clean energy,
+          and community progress to every household.
+        </p>
+        <div class="footer-social">
+          <!-- Facebook -->
+          <a class="social-btn" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i>
+          </a>
+          <!-- Instagram -->
+          <a class="social-btn" href="#" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <!-- YouTube -->
+          <a class="social-btn" href="#" aria-label="YouTube">
+            <i class="bi bi-youtube"></i>
+
+          </a>
+          <!-- WhatsApp -->
+          <a class="social-btn" href="#" aria-label="WhatsApp">
+           <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- Contact -->
+      <div>
+        <p class="footer-col-heading">Contact us</p>
+ 
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 10.5c0 .3-.1.6-.2.9-.1.3-.4.6-.7.8-.5.3-1 .4-1.6.3-1-.2-2-.6-2.9-1.2-1-.7-1.8-1.5-2.4-2.5-.6-.9-1-1.9-1.1-2.9-.1-.5 0-1 .3-1.5.2-.4.5-.6.9-.8.1 0 .2-.1.3-.1.2 0 .4.1.5.3l1.1 1.7c.1.1.1.3.1.4 0 .2-.1.3-.2.5l-.3.4c0 .1-.1.1-.1.2.1.3.3.6.5.8.3.4.6.7 1 1 .2.1.4.3.7.4l.2-.2c.1-.2.3-.3.5-.3.1 0 .3 0 .4.1l1.7 1c.2.1.3.3.3.5v.1z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="contact-label">Helpline</p>
+            <a class="contact-value" href="tel:+912012345678">+91 20 1234 5678</a>
+          </div>
+        </div>
+ 
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="12" height="9" rx="1.5"/>
+              <path d="M2 4l6 5 6-5"/>
+            </svg>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <a class="contact-value" href="mailto:info@evillage.gov.in">info@mahuevillage.gov.in</a>
+          </div>
+        </div>
+ 
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="6.5" r="2.2"/>
+              <path d="M8 2C5.2 2 3 4.2 3 7c0 3.5 5 8 5 8s5-4.5 5-8c0-2.8-2.2-5-5-5z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="contact-label">Office hours</p>
+            <p class="contact-value" style="cursor:default;">Mon–Sat, 10 AM – 5 PM</p>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Gram Panchayat info -->
+      <div>
+        <p class="footer-col-heading">Gram Panchayat</p>
+        <div class="gp-block">
+          <p class="gp-name">ग्रामपंचायत, [गावाचे नाव]</p>
+          <p class="gp-sub">
+            Tal. [Haveli] · Dist. [Pune]<br>
+            Maharashtra — 411 000
+          </p>
+          <div class="gp-badge-row">
+            <span class="gp-badge">Est. 1956</span>
+            <span class="gp-badge">ISO certified</span>
+            <span class="gp-badge">Smart village 2021</span>
+            <span class="gp-badge">9 wards</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2026 <span>e-Village, [Mahu Village] Gram Panchayat.</span> All rights reserved.
+      </p>
+      <div class="footer-lang">
+        <button class="lang-btn active" onclick="this.classList.add('active');this.nextElementSibling.classList.remove('active')">English</button>
+        <button class="lang-btn" onclick="this.classList.add('active');this.previousElementSibling.classList.remove('active')">मराठी</button>
+      </div>
+    </div>
+ 
+  </footer>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

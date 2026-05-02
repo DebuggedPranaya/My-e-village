@@ -1,0 +1,490 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>My e-Village | Digital Village Platform</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+   <link rel="icon" href="{% static 'assets/img/village-logo.png' %}">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href=">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/header-hero.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/footer.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Mentor
+  * Template URL: https://bootstrapmaid.com/mentor-free-education-bootstrap-theme/
+  * Updated: Jul 07 2025 with Bootstrap v5.3.7
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <style>
+    /* Hide the default Google Translate toolbar that appears at top */
+    .goog-te-banner-frame { display: none !important; }
+    body { top: 0 !important; }
+    .goog-te-gadget { display: none !important; }
+    /* Keep our custom buttons styled correctly */
+    .ev-lang-btn.ev-lang-active { background: #ffffff; color: #111111; border: 0.5px solid rgba(0,0,0,0.10); }
+  </style>
+</head>
+<body>
+  <!-- Hidden Google Translate element — do not remove -->
+  <div id="google_translate_element" style="display:none;"></div>
+
+     <div class="ev-topbar">
+ 
+    <a class="ev-logo" href="index.html">
+      <div class="ev-logo-icon">
+        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2L2 7v9h5v-5h4v5h5V7L9 2z"/>
+        </svg>
+      </div>
+      <span class="ev-logo-name">My e<span class="ev-logo-accent">Village</span></span>
+    </a>
+ 
+    <ul class="ev-nav">
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link ev-active" href="{% url 'home' %}">Home</a>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'about' %}">About village</a>
+      </li>
+ 
+      <li class="ev-nav-item ev-has-dropdown">
+        <span class="ev-nav-trigger">
+          Services
+          <svg class="ev-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor"
+               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 4l4 4 4-4"/>
+          </svg>
+        </span>
+        <div class="ev-dropdown">
+          <a class="ev-dropdown-link" href="{% url 'education' %}">
+            <div class="ev-dropdown-icon dd-edu">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 5l6-3 6 3-6 3-6-3z"/>
+                <path d="M6 7.5v4c0 1 1 1.5 2 1.5s2-.5 2-1.5v-4"/>
+                <path d="M14 5v4"/>
+              </svg>
+            </div>
+            Education support
+          </a>
+          <a class="ev-dropdown-link" href="{% url 'agriculture' %}">
+            <div class="ev-dropdown-icon dd-agri">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 13V7"/>
+                <path d="M4 10c0-4 4-6 4-6s4 2 4 6a4 4 0 01-8 0z"/>
+              </svg>
+            </div>
+            Agriculture
+          </a>
+        </div>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'economy' %}">Economy</a>
+      </li>
+ 
+    </ul>
+ 
+    <div class="ev-nav-right">
+ 
+      <div class="ev-lang">
+        <button class="ev-lang-btn ev-lang-active" id="evLangEn">EN</button>
+        <button class="ev-lang-btn" id="evLangMr">मरा</button>
+      </div>
+ 
+      <div class="ev-nav-sep"></div>
+ 
+      <a class="ev-btn-contact" href="{% url 'contact' %}">Contact</a>
+ 
+    </div>
+ 
+    <button class="ev-hamburger" id="evHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+ 
+  </div>
+ 
+  <!-- Mobile nav drawer -->
+  <div class="ev-mobile-nav" id="evMobileNav">
+    <a class="ev-mobile-link" href="{% url 'home' %}">Home</a>
+    <a class="ev-mobile-link" href="{% url 'about' %}">About village</a>
+    <a class="ev-mobile-link" href="{% url 'education' %}">Education support</a>
+    <a class="ev-mobile-link" href="{% url 'agriculture' %}">Agriculture</a>
+    <a class="ev-mobile-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+    <a class="ev-mobile-link" href="{% url 'economy' %}">Economy</a>
+    <a class="ev-mobile-link" href="{% url 'contact' %}">Contact</a>
+    <div class="ev-mobile-lang">
+      <button class="ev-lang-btn ev-lang-active" id="evMobLangEn">EN</button>
+      <button class="ev-lang-btn" id="evMobLangMr">मरा</button>
+    </div>
+  </div>
+
+  <main>
+    
+    <section class="mb-section mb-mill">
+      <img class="mb-section-bg" src="{% static 'assets/img/mill.jpg' %}" alt="Jawahar Shetkari Sahakari Sakhar Karkhana" onerror="this.style.opacity='0'">
+      <div class="mb-scrim"></div>
+      <p class="mb-corner-tag">Sugar Mill · Wai</p>
+      <div class="mb-content">
+        <div class="mb-title-block">
+          <p class="mb-eyebrow">Cooperative · Wai, Pune</p>
+          <h1 class="mb-title">Jawahar Shetkari<br>Sahakari <em>Sakhar</em><br>Karkhana Ltd.</h1>
+          <p class="mb-tagline">Wai's farmer-owned cooperative sugar mill — supplying cane, earning fairly. Crushing season runs October through March every year.</p>
+          <div class="mb-cta-row">
+            <a href="tel:02302450402" class="mb-btn-primary">📞 Call mill office</a>
+            <a href="https://maps.google.com/?q=Wai+Gaon+Pune+Maharashtra+411017" target="_blank" class="mb-btn-outline">📍 Get directions</a>
+          </div>
+        </div>
+        <div class="mb-info-panel">
+          <p class="mb-info-panel-title">Mill details</p>
+          <div class="mb-info-rows">
+            <div class="mb-info-row">
+              <span class="mb-info-key">Type</span>
+              <span class="mb-info-val">Cooperative (Sahakari)</span>
+            </div>
+            <div class="mb-info-row">
+              <span class="mb-info-key">Address</span>
+              <span class="mb-info-val">Wai Gaon, Dist. Pune, Maharashtra – 411017</span>
+            </div>
+            <div class="mb-info-row">
+              <span class="mb-info-key">Phone</span>
+              <span class="mb-info-val"><a href="tel:02302450402">0230-245 0402</a></span>
+            </div>
+            <div class="mb-info-row">
+              <span class="mb-info-key">Crushing season</span>
+              <span class="mb-info-val">October – March</span>
+            </div>
+            <div class="mb-info-row">
+              <span class="mb-info-key">FRP 2024–25</span>
+              <span class="mb-info-val"><strong>₹340 / quintal</strong> at 10.25% basic recovery rate (Central Govt.)</span>
+            </div>
+            <div class="mb-info-row">
+              <span class="mb-info-key">Sugar Commissionerate</span>
+              <span class="mb-info-val"><a href="tel:02025538041">020-255 38041</a></span>
+            </div>
+          </div>
+          <div class="mb-panel-divider"></div>
+          <p class="mb-info-panel-title" style="margin-bottom:12px;">How to register your sugarcane</p>
+          <div class="mb-steps">
+            <div class="mb-step">
+              <span class="mb-step-num">1</span>
+              <span>Register on the <strong>Maha Us Nondani</strong> portal run by the Sugar Commissionerate of Maharashtra.</span>
+            </div>
+            <div class="mb-step">
+              <span class="mb-step-num">2</span>
+              <span>Keep ready: <strong>7/12 extract</strong> (land ownership proof), Aadhaar card, and bank passbook.</span>
+            </div>
+            <div class="mb-step">
+              <span class="mb-step-num">3</span>
+              <span>Submit your survey number, sugarcane variety, estimated yield, and expected harvesting time.</span>
+            </div>
+            <div class="mb-step">
+              <span class="mb-step-num">4</span>
+              <span>Visit the mill's agriculture department or use their mobile app / web portal to complete factory-level registration.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- SECTION 2 — GRAM BAZAAR -->
+    <section class="mb-section mb-bazaar">
+      <img class="mb-section-bg" src="{% static 'assets/img/mill-bazaar/bazaar2.jpg' %}" alt="Wai Gram Bazaar" onerror="this.style.opacity='0'">
+      <div class="mb-scrim"></div>
+      <p class="mb-corner-tag">Weekly Market · Wai</p>
+      <div class="mb-content">
+        <div class="mb-title-block">
+          <p class="mb-eyebrow">Every Sunday · Shetkari Bazaar</p>
+          <h1 class="mb-title">Wai's weekly<br><em>Gram</em> Bazaar</h1>
+          <p class="mb-tagline">Fresh vegetables, seasonal fruits, leafy greens and homemade pickles — straight from the farmer to your kitchen. Open every Sunday at Mahadev Nagar.</p>
+          <div class="mb-cta-row">
+            <a href="https://maps.google.com/?q=Mahadev+Nagar+Near+Yash+Clinic+Somatne+Phata+Road+Wai+Pune" target="_blank" class="mb-btn-primary">📍 View on map</a>
+            <a href="https://facebook.com" target="_blank" class="mb-btn-outline">💬 Shetkari Bazaar page</a>
+          </div>
+        </div>
+        <div class="mb-info-panel">
+          <p class="mb-info-panel-title">Bazaar details</p>
+          <div class="mb-info-rows">
+            <div class="mb-info-row">
+              <span class="mb-info-key">Location</span>
+              <span class="mb-info-val">Mahadev Nagar, Near Yash Clinic, Somatne Phata Road, Wai</span>
+            </div>
+            <div class="mb-info-row">
+              <span class="mb-info-key">Market day</span>
+              <span class="mb-info-val"><strong>Every Sunday</strong></span>
+            </div>
+            <div class="mb-info-row">
+              <span class="mb-info-key">Timings</span>
+              <span class="mb-info-val"><strong>8:30 AM – 8:30 PM</strong></span>
+            </div>
+            <div class="mb-info-row">
+              <span class="mb-info-key">Stall booking</span>
+              <span class="mb-info-val">Managed on-site by the local farmer committee. Contact via the <a href="https://facebook.com" target="_blank">Shetkari Bazaar Facebook page</a> for inquiries.</span>
+            </div>
+          </div>
+          <div class="mb-panel-divider"></div>
+          <p class="mb-info-panel-title" style="margin-bottom:10px;">What's sold here</p>
+          <div class="mb-pills">
+            <span class="mb-pill"> Fresh vegetables</span>
+            <span class="mb-pill"> Leafy greens</span>
+            <span class="mb-pill"> Seasonal fruits</span>
+            <span class="mb-pill">Homemade pickles</span>
+            <span class="mb-pill"> Traditional items</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+  <footer class="footer">
+    <div class="footer-top">
+ 
+      <!-- Brand & social -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 2L2 7v9h5v-5h4v5h5V7L9 2z"/>
+            </svg>
+          </div>
+          <span class="footer-logo-text">My e<span class="footer-logo-accent">Village</span></span>
+        </div>
+        <p class="footer-tagline">
+          A smart village initiative bringing digital governance, clean energy,
+          and community progress to every household.
+        </p>
+        <div class="footer-social">
+          <!-- Facebook -->
+          <a class="social-btn" href="#" aria-label="Facebook">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M9.5 3H11V1h-1.5C7.6 1 7 2.1 7 3.5V5H5.5v2H7v7h2V7h1.5l.5-2H9V3.5c0-.3.2-.5.5-.5z"/>
+            </svg>
+          </a>
+          <!-- Instagram -->
+          <a class="social-btn" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="12" height="12" rx="3.5"/>
+              <circle cx="8" cy="8" r="2.8"/>
+              <circle cx="11.2" cy="4.8" r=".5" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+          <!-- YouTube -->
+          <a class="social-btn" href="#" aria-label="YouTube">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M13.5 4.5S13.2 3 12 3H4C2.8 3 2.5 4.5 2.5 4.5S2 6 2 7.5v1C2 10 2.5 11.5 2.5 11.5S2.8 13 4 13h8c1.2 0 1.5-1.5 1.5-1.5S14 10 14 8.5v-1c0-1.5-.5-3-.5-3zM6.5 10V6l4 2-4 2z"/>
+            </svg>
+          </a>
+          <!-- WhatsApp -->
+          <a class="social-btn" href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 1.5A6.5 6.5 0 0 0 2.2 11L1.5 14.5l3.6-.7A6.5 6.5 0 1 0 8 1.5zm0 1.2a5.3 5.3 0 1 1-2.8 9.8l-.2-.1-2.1.4.4-2-.1-.2A5.3 5.3 0 0 1 8 2.7zm-1.8 2.8c-.2 0-.4.1-.6.3-.2.2-.7.7-.7 1.7s.7 2 .8 2.1c.1.1 1.4 2.2 3.4 3 .5.2.9.3 1.2.4.5.1 1 .1 1.3-.1.4-.2.6-.8.7-1.1 0-.2 0-.3-.1-.4l-.9-.4c-.1 0-.2-.1-.4.1l-.5.6c-.1.1-.2.1-.3.1-.2-.1-.7-.3-1.3-.8-.5-.4-.8-1-.9-1.1 0-.1 0-.2.1-.3l.3-.3c.1-.1.1-.2.2-.3v-.3l-.4-1c-.1-.2-.2-.3-.4-.3h-.4z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- Contact -->
+      <div>
+        <p class="footer-col-heading">Contact us</p>
+ 
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 10.5c0 .3-.1.6-.2.9-.1.3-.4.6-.7.8-.5.3-1 .4-1.6.3-1-.2-2-.6-2.9-1.2-1-.7-1.8-1.5-2.4-2.5-.6-.9-1-1.9-1.1-2.9-.1-.5 0-1 .3-1.5.2-.4.5-.6.9-.8.1 0 .2-.1.3-.1.2 0 .4.1.5.3l1.1 1.7c.1.1.1.3.1.4 0 .2-.1.3-.2.5l-.3.4c0 .1-.1.1-.1.2.1.3.3.6.5.8.3.4.6.7 1 1 .2.1.4.3.7.4l.2-.2c.1-.2.3-.3.5-.3.1 0 .3 0 .4.1l1.7 1c.2.1.3.3.3.5v.1z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="contact-label">Helpline</p>
+            <a class="contact-value" href="tel:+912012345678">+91 20 1234 5678</a>
+          </div>
+        </div>
+ 
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="12" height="9" rx="1.5"/>
+              <path d="M2 4l6 5 6-5"/>
+            </svg>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <a class="contact-value" href="mailto:info@evillage.gov.in">info@waievillage.gov.in</a>
+          </div>
+        </div>
+ 
+        <div class="contact-item">
+          <div class="contact-icon"> 
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="6.5" r="2.2"/>
+              <path d="M8 2C5.2 2 3 4.2 3 7c0 3.5 5 8 5 8s5-4.5 5-8c0-2.8-2.2-5-5-5z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="contact-label">Office hours</p>
+            <p class="contact-value" style="cursor:default;">Mon–Sat, 10 AM – 5 PM</p>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Gram Panchayat info -->
+      <div>
+        <p class="footer-col-heading">Gram Panchayat</p>
+        <div class="gp-block">
+          <p class="gp-name">ग्रामपंचायत, [गावाचे नाव]</p>
+          <p class="gp-sub">
+            Tal. [Taluka] · Dist. [District]<br>
+            Maharashtra — 411 000
+          </p>
+          <div class="gp-badge-row">
+            <span class="gp-badge">Est. 1956</span>
+            <span class="gp-badge">ISO certified</span>
+            <span class="gp-badge">Smart village 2021</span>
+            <span class="gp-badge">9 wards</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2026 <span>e-Village, [Wai Village] Gram Panchayat.</span> All rights reserved.
+      </p>
+      <div class="footer-lang">
+        <button class="lang-btn active" onclick="this.classList.add('active');this.nextElementSibling.classList.remove('active')">English</button>
+        <button class="lang-btn" onclick="this.classList.add('active');this.previousElementSibling.classList.remove('active')">मराठी</button>
+      </div>
+    </div>
+ 
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <!-- ===================== GOOGLE TRANSLATE ===================== -->
+  <script>
+    // 1. Initialise the hidden Google Translate widget
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'mr,en',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    // 2. Translate page to a given language code
+    function triggerTranslate(langCode) {
+      var select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+      } else {
+        // Widget not ready yet — try again in 500ms
+        setTimeout(function() { triggerTranslate(langCode); }, 500);
+      }
+    }
+
+    // 3. Restore to original English — clears googtrans cookie and reloads
+    function restoreEnglish() {
+      // Clear the Google Translate cookie on both root path and current path
+      var domain = location.hostname;
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + domain;
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + domain;
+      location.reload();
+    }
+
+    // 4. Wire up both sets of EN / मरा buttons (desktop + mobile)
+    function setupLangButtons() {
+      var enBtns = document.querySelectorAll('#evLangEn, #evMobLangEn');
+      var mrBtns = document.querySelectorAll('#evLangMr, #evMobLangMr');
+
+      enBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          // Mark EN active, मरा inactive — all instances
+          enBtns.forEach(function(b) { b.classList.add('ev-lang-active'); });
+          mrBtns.forEach(function(b) { b.classList.remove('ev-lang-active'); });
+          restoreEnglish();
+        });
+      });
+
+      mrBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          // Mark मरा active, EN inactive — all instances
+          mrBtns.forEach(function(b) { b.classList.add('ev-lang-active'); });
+          enBtns.forEach(function(b) { b.classList.remove('ev-lang-active'); });
+          triggerTranslate('mr');
+        });
+      });
+    }
+
+    // 5. On page load — check if page is already translated (googtrans cookie set)
+    //    and restore correct button state if so
+    (function checkInitialState() {
+      var match = document.cookie.match(/googtrans=\/en\/([a-z]+)/);
+      if (match && match[1] === 'mr') {
+        // Page is in Marathi — mark मरा as active
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('#evLangMr, #evMobLangMr').forEach(function(b) {
+            b.classList.add('ev-lang-active');
+          });
+          document.querySelectorAll('#evLangEn, #evMobLangEn').forEach(function(b) {
+            b.classList.remove('ev-lang-active');
+          });
+        });
+      }
+    })();
+
+    // Run button setup after DOM is ready
+    document.addEventListener('DOMContentLoaded', setupLangButtons);
+  </script>
+
+  <!-- Load Google Translate script last -->
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>

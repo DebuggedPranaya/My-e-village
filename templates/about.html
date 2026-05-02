@@ -1,0 +1,363 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>About Village — My e-Village Wai</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%230F6E56%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M7.293%201.5a1%201%200%200%201%201.414%200L11%203.793V2.5a.5.5%200%200%201%20.5-.5h1a.5.5%200%200%201%20.5.5v3.293l2.354%202.353a.5.5%200%200%201-.708.707L8%202.207%201.354%208.853a.5.5%200%201%201-.708-.707z%22/%3E%3Cpath%20d%3D%22m14%209.293-6-6-6%206V13.5A1.5%201.5%200%200%200%203.5%2015h9a1.5%201.5%200%200%200%201.5-1.5zm-6-.811c1.664-1.673%205.825%201.254%200%205.018-5.825-3.764-1.664-6.691%200-5.018%22/%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  
+</head>
+
+<body>
+   {% include 'header.html' %}
+  <div class="ab-hero">
+    <img
+      src="{% static 'assets/img/villageimgs/aboutimg/village2.jpg' %}"
+      alt="Mahu village"
+      onerror="this.style.background='#0D2B1F'; this.removeAttribute('src')"
+    />
+    <div class="ab-hero-scrim"></div>
+    <div class="ab-hero-inner">
+      <div>
+        <p class="ab-breadcrumb">
+          <a href="index.html">Home</a><span>›</span>About village
+        </p>
+        <h1 class="ab-hero-title">About <span class="ab-hero-title-accent">Wai</span></h1>
+      </div>
+      <span class="ab-hero-badge">Maharashtra · Est. 1956</span>
+    </div>
+  </div>
+
+
+  
+
+  <!-- =====================
+       TAB BAR
+  ===================== -->
+  <div class="ab-tabs-wrap">
+    <ul class="ab-tabs" id="abTabs">
+      <li class="ab-tab ab-tab-active" data-tab="history">History & origin</li>
+      <li class="ab-tab" data-tab="geography">Geography & location</li>
+      <li class="ab-tab" data-tab="culture">Culture & festivals</li>
+      <li class="ab-tab" data-tab="admin">Government & administration</li>
+    </ul>
+  </div>
+ 
+  <!-- =====================
+       TAB CONTENT
+  ===================== -->
+  <div class="ab-content">
+ 
+    <!-- History — two column -->
+    <div class="ab-panel ab-panel-active" id="tab-history">
+      <div class="ab-history-grid">
+        <div>
+          <img
+            class="ab-history-img"
+            src="{% static 'assets/img/villageimgs/aboutimg/mahuvill.jpeg' %}"
+            alt="Mahu village fields"
+            onerror="this.style.background='#d3d1c7'; this.removeAttribute('src')"
+          />
+          <p class="ab-history-img-caption">Small-scale barrier built across a local stream</p>
+        </div>
+        <div class="ab-history-text">
+          <p class="ab-history-eyebrow">History & origin</p>
+          <h2 class="ab-history-heading">A village rooted in the heart of Maharashtra</h2>
+          <p class="ab-history-body">Wai derives its name from the Sanskrit Word "Wadi" (Madhuca longifolia), which once grew abundantly across this region of the Deccan plateau. The tree held deep cultural and economic significance for early settlers — its flowers were used to brew traditional liquor, its seeds pressed for oil, and its timber used in construction.</p>
+        <!--  <p class="ab-history-body">The village has been inhabited for several centuries, with early records from the British-era land surveys of the 1800s documenting its fertile black soil and prosperous farming community. Post-independence, Wai was integrated into Maharashtra in 1956 when states were reorganised on linguistic lines.</p> -->
+          <div class="ab-history-divider"></div>
+          <div class="ab-history-facts">
+            <div class="ab-history-fact">
+              <div class="ab-history-fact-dot"></div>
+              <p class="ab-history-fact-text"><strong>Name origin:</strong> Named after the Mahua tree, native to the Deccan region</p>
+            </div>
+            <div class="ab-history-fact">
+              <div class="ab-history-fact-dot"></div>
+              <p class="ab-history-fact-text"><strong>Gram Panchayat formed:</strong> 1956, following Maharashtra state formation</p>
+            </div>
+            <div class="ab-history-fact">
+              <div class="ab-history-fact-dot"></div>
+              <p class="ab-history-fact-text"><strong>Smart village designation:</strong> 2021 under the Maharashtra Smart Village programme</p>
+            </div>
+            <div class="ab-history-fact">
+              <div class="ab-history-fact-dot"></div>
+              <p class="ab-history-fact-text"><strong>Primary heritage:</strong> Sugarcane farming, dairy, and traditional Maharashtrian folk culture</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Geography -->
+    <div class="ab-panel" id="tab-geography">
+      <div class="ab-geo-grid">
+        <div class="ab-geo-card"><p class="ab-geo-label">District</p><p class="ab-geo-value">Pune</p><p class="ab-geo-sub">Maharashtra, India</p></div>
+        <div class="ab-geo-card"><p class="ab-geo-label">Taluka</p><p class="ab-geo-value">Haveli</p><p class="ab-geo-sub">Administrative block</p></div>
+        <div class="ab-geo-card"><p class="ab-geo-label">Total area</p><p class="ab-geo-value">18.4 km²</p><p class="ab-geo-sub">Agricultural + residential</p></div>
+        <div class="ab-geo-card"><p class="ab-geo-label">Altitude</p><p class="ab-geo-value">762 m</p><p class="ab-geo-sub">Above sea level · Western Ghats</p></div>
+        <div class="ab-geo-card"><p class="ab-geo-label">Nearest city</p><p class="ab-geo-value">Pune</p><p class="ab-geo-sub">~35 km via NH-65</p></div>
+        <div class="ab-geo-card"><p class="ab-geo-label">River</p><p class="ab-geo-value">Mula-Mutha</p><p class="ab-geo-sub">Primary water source</p></div>
+      </div>
+      <div class="ab-map-placeholder" style="height: 380px; padding: 0; overflow: hidden;">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29872.407818491785!2d78.6038944!3d20.626778849999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd381a10ca83fe7%3A0xd9eebfcb7c8346fe!2sWaigaon%2C%20Maharashtra%20442001!5e0!3m2!1sen!2sin!4v1774105468465!5m2!1sen!2sin"
+    width="100%"
+    height="100%"
+    style="border: 0; display: block;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+    </div>
+ 
+    <!-- Culture -->
+    <!-- Culture -->
+<div class="ab-panel" id="tab-culture">
+  <div class="ab-fest-grid">
+
+    {% for fest in festivals %}
+    <div class="ab-fest-card ab-fest-card-img" style="--fest-img: url('{{ fest.image.url }}')">
+      <img src="{{ fest.image.url }}" alt="{{ fest.name }}" class="ab-fest-card-bg-img" />
+      <div class="ab-fest-card-overlay"></div>
+      <div class="ab-fest-card-body">
+        <p class="ab-fest-month">{{ fest.month }}</p>
+        <p class="ab-fest-name">{{ fest.name }}</p>
+        <p class="ab-fest-desc">{{ fest.description }}</p>
+      </div>
+    </div>
+    {% empty %}
+    <p>No festivals added yet.</p>
+    {% endfor %}
+
+  </div>
+</div>
+    
+ 
+ 
+    <!-- Administration -->
+    <div class="ab-panel" id="tab-admin">
+      <div class="ab-admin-strips">
+        <div class="ab-admin-row"><div class="ab-admin-label">Type</div><div class="ab-admin-value">Gram Panchayat</div></div>
+        <div class="ab-admin-row"><div class="ab-admin-label">State</div><div class="ab-admin-value">Maharashtra</div></div>
+        <div class="ab-admin-row"><div class="ab-admin-label">District</div><div class="ab-admin-value">Pune</div></div>
+        <div class="ab-admin-row"><div class="ab-admin-label">Taluka</div><div class="ab-admin-value">Haveli</div></div>
+        <div class="ab-admin-row"><div class="ab-admin-label">Established</div><div class="ab-admin-value">1956</div></div>
+        <div class="ab-admin-row"><div class="ab-admin-label">Total wards</div><div class="ab-admin-value">9 wards</div></div>
+        <div class="ab-admin-row"><div class="ab-admin-label">Sarpanch</div><div class="ab-admin-value">सुनील पाटील</div></div>
+        <div class="ab-admin-row"><div class="ab-admin-label">Gram Sevak</div><div class="ab-admin-value">राजेंद्र शिंदे</div></div>
+        <div class="ab-admin-row"><div class="ab-admin-label">Office hours</div><div class="ab-admin-value">Monday – Saturday, 10:00 AM – 5:00 PM</div></div>
+        <div class="ab-admin-row"><div class="ab-admin-label">Helpline</div><div class="ab-admin-value">+91 20 1234 5678</div></div>
+      </div>
+      <p class="ab-admin-note">The Gram Panchayat of Wai holds quarterly Gram Sabha meetings open to all registered residents. Decisions on infrastructure, development funds, and welfare schemes are made collectively. All meeting minutes are published on this portal within 7 days.</p>
+    </div>
+ 
+  </div>
+
+  
+
+  
+
+<script>
+/* ======================
+   TAB FUNCTION (FIXED)
+====================== */
+document.addEventListener("DOMContentLoaded", function() {
+  // Tab switching functionality
+  const tabsContainer = document.getElementById("abTabs");
+  if (tabsContainer) {
+    tabsContainer.addEventListener("click", function (e) {
+      const tab = e.target.closest(".ab-tab");
+      if (!tab) return;
+
+      // Remove active class from all tabs
+      document.querySelectorAll('.ab-tab').forEach(function(t) {
+        t.classList.remove('ab-tab-active');
+      });
+
+      // Remove active class from all panels
+      document.querySelectorAll('.ab-panel').forEach(function(p) {
+        p.classList.remove('ab-panel-active');
+      });
+
+      // Add active class to clicked tab
+      tab.classList.add('ab-tab-active');
+
+      // Show corresponding panel
+      const targetId = 'tab-' + tab.dataset.tab;
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) {
+        targetPanel.classList.add('ab-panel-active');
+      }
+    });
+  }
+
+  /* ======================
+     HAMBURGER MENU - Check if elements exist first
+  ====================== */
+  const hamburger = document.getElementById('evHamburger');
+  const mobileNav = document.getElementById('evMobileNav');
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function() {
+      mobileNav.classList.toggle('ev-mobile-nav--open');
+      hamburger.classList.toggle('ev-hamburger--open');
+    });
+  }
+});
+
+/* ======================
+   GOOGLE TRANSLATE FIX
+====================== */
+function translateTo(lang) {
+  if (lang === "en") {
+    document.cookie = "googtrans=/en/en;path=/";
+    localStorage.setItem("lang", "en");
+    location.reload();
+    return;
+  }
+
+  localStorage.setItem("lang", lang);
+
+  const interval = setInterval(function() {
+    const select = document.querySelector(".goog-te-combo");
+    if (select) {
+      select.value = lang;
+      select.dispatchEvent(new Event("change"));
+      clearInterval(interval);
+    }
+  }, 300);
+}
+
+/* ======================
+   LANGUAGE BUTTONS
+====================== */
+function setupLangButtons(enId, mrId) {
+  const btnEn = document.getElementById(enId);
+  const btnMr = document.getElementById(mrId);
+
+  if (!btnEn || !btnMr) return;
+
+  btnEn.onclick = function() {
+    translateTo("en");
+    btnEn.classList.add("ev-lang-active");
+    btnMr.classList.remove("ev-lang-active");
+  };
+
+  btnMr.onclick = function() {
+    translateTo("mr");
+    btnMr.classList.add("ev-lang-active");
+    btnEn.classList.remove("ev-lang-active");
+  };
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  setupLangButtons("evLangEn", "evLangMr");
+  setupLangButtons("evMobLangEn", "evMobLangMr");
+
+  const lang = localStorage.getItem("lang");
+  if (lang === "mr") {
+    translateTo("mr");
+  }
+});
+</script>
+
+
+
+  
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+            <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2L2 7v9h5v-5h4v5h5V7L9 2z"/></svg>
+          </div>
+          <span class="footer-logo-text">My e<span class="footer-logo-accent">Village</span></span>
+        </div>
+        <p class="footer-tagline">A smart village initiative bringing digital governance, clean energy, and community progress to every household.</p>
+        <div class="footer-social">
+          <a class="social-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M9.5 3H11V1h-1.5C7.6 1 7 2.1 7 3.5V5H5.5v2H7v7h2V7h1.5l.5-2H9V3.5c0-.3.2-.5.5-.5z"/></svg></a>
+          <a class="social-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="12" height="12" rx="3.5"/><circle cx="8" cy="8" r="2.8"/><circle cx="11.2" cy="4.8" r=".5" fill="currentColor" stroke="none"/></svg></a>
+          <a class="social-btn" href="#" aria-label="YouTube"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M13.5 4.5S13.2 3 12 3H4C2.8 3 2.5 4.5 2.5 4.5S2 6 2 7.5v1C2 10 2.5 11.5 2.5 11.5S2.8 13 4 13h8c1.2 0 1.5-1.5 1.5-1.5S14 10 14 8.5v-1c0-1.5-.5-3-.5-3zM6.5 10V6l4 2-4 2z"/></svg></a>
+          <a class="social-btn" href="#" aria-label="WhatsApp"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5A6.5 6.5 0 0 0 2.2 11L1.5 14.5l3.6-.7A6.5 6.5 0 1 0 8 1.5zm0 1.2a5.3 5.3 0 1 1-2.8 9.8l-.2-.1-2.1.4.4-2-.1-.2A5.3 5.3 0 0 1 8 2.7zm-1.8 2.8c-.2 0-.4.1-.6.3-.2.2-.7.7-.7 1.7s.7 2 .8 2.1c.1.1 1.4 2.2 3.4 3 .5.2.9.3 1.2.4.5.1 1 .1 1.3-.1.4-.2.6-.8.7-1.1 0-.2 0-.3-.1-.4l-.9-.4c-.1 0-.2-.1-.4.1l-.5.6c-.1.1-.2.1-.3.1-.2-.1-.7-.3-1.3-.8-.5-.4-.8-1-.9-1.1 0-.1 0-.2.1-.3l.3-.3c.1-.1.1-.2.2-.3v-.3l-.4-1c-.1-.2-.2-.3-.4-.3h-.4z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-heading">Contact us</p>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 10.5c0 .3-.1.6-.2.9-.1.3-.4.6-.7.8-.5.3-1 .4-1.6.3-1-.2-2-.6-2.9-1.2-1-.7-1.8-1.5-2.4-2.5-.6-.9-1-1.9-1.1-2.9-.1-.5 0-1 .3-1.5.2-.4.5-.6.9-.8.1 0 .2-.1.3-.1.2 0 .4.1.5.3l1.1 1.7c.1.1.1.3.1.4 0 .2-.1.3-.2.5l-.3.4c0 .1-.1.1-.1.2.1.3.3.6.5.8.3.4.6.7 1 1 .2.1.4.3.7.4l.2-.2c.1-.2.3-.3.5-.3.1 0 .3 0 .4.1l1.7 1c.2.1.3.3.3.5v.1z"/></svg></div>
+          <div><p class="contact-label">Helpline</p><a class="contact-value" href="tel:+912012345678">+91 20 1234 5678</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="12" height="9" rx="1.5"/><path d="M2 4l6 5 6-5"/></svg></div>
+          <div><p class="contact-label">Email</p><a class="contact-value" href="mailto:info@evillagewai.gov.in">info@evillagewai.gov.in</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="6.5" r="2.2"/><path d="M8 2C5.2 2 3 4.2 3 7c0 3.5 5 8 5 8s5-4.5 5-8c0-2.8-2.2-5-5-5z"/></svg></div>
+          <div><p class="contact-label">Office hours</p><p class="contact-value" style="cursor:default;">Mon–Sat, 10 AM – 5 PM</p></div>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-heading">Gram Panchayat</p>
+        <div class="gp-block">
+          <p class="gp-name">ग्रामपंचायत, Wai</p>
+          <p class="gp-sub">Tal. [Haveli] · Dist. [Pune]<br>Maharashtra — 411 000</p>
+          <div class="gp-badge-row">
+            <span class="gp-badge">Est. 1956</span>
+            <span class="gp-badge">ISO certified</span>
+            <span class="gp-badge">Smart village 2021</span>
+            <span class="gp-badge">9 wards</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 <span>e-Village, Wai Gram Panchayat.</span> All rights reserved.</p>
+      <div class="footer-lang">
+        <button class="lang-btn active" onclick="this.classList.add('active');this.nextElementSibling.classList.remove('active')">English</button>
+        <button class="lang-btn" onclick="this.classList.add('active');this.previousElementSibling.classList.remove('active')">मराठी</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+</body>
+</html>

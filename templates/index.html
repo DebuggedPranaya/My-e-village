@@ -1,0 +1,784 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <title>My e-Village | Digital Village Platform</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22currentColor%22%20class%3D%22bi%20bi-house-heart-fill%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M7.293%201.5a1%201%200%200%201%201.414%200L11%203.793V2.5a.5.5%200%200%201%20.5-.5h1a.5.5%200%200%201%20.5.5v3.293l2.354%202.353a.5.5%200%200%201-.708.707L8%202.207%201.354%208.853a.5.5%200%201%201-.708-.707z%22/%3E%3Cpath%20d%3D%22m14%209.293-6-6-6%206V13.5A1.5%201.5%200%200%200%203.5%2015h9a1.5%201.5%200%200%200%201.5-1.5zm-6-.811c1.664-1.673%205.825%201.254%200%205.018-5.825-3.764-1.664-6.691%200-5.018%22/%3E%3C/svg%3E">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href=">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'mr',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<div id="google_translate_element" style="display:none;"></div>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body class="index-page">
+   
+   
+  <div class="ev-topbar">
+ 
+    <a class="ev-logo" href="{% url 'home' %}">
+      <div class="ev-logo-icon">
+        
+        <i class="bi bi-house-heart-fill"></i>
+      </div>
+      <span class="ev-logo-name">My e<span class="ev-logo-accent">Village</span></span>
+    </a>
+ 
+    <ul class="ev-nav">
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link ev-active" href="{% url 'home' %}">Home</a>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'about' %}">About village</a>
+      </li>
+ 
+      <li class="ev-nav-item ev-has-dropdown">
+        <span class="ev-nav-trigger">
+          Services
+          <i class="bi bi-arrow-down"></i>
+        </span>
+        <div class="ev-dropdown">
+          <a class="ev-dropdown-link" href="{% url 'education' %}">
+            <div class="ev-dropdown-icon dd-edu">
+              <i class="bi bi-journal-text"></i>
+            </div>
+            Education support
+          </a>
+          <a class="ev-dropdown-link" href="{% url 'agriculture' %}">
+            <div class="ev-dropdown-icon dd-agri">
+              <i class="bi bi-leaf"></i>
+            </div>
+            Agriculture
+          </a>
+        </div>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'economy' %}">Economy</a>
+      </li>
+ 
+    </ul>
+ 
+    <div class="ev-nav-right">
+ 
+      <div class="ev-lang">
+        <button class="ev-lang-btn ev-lang-active" id="evLangEn">EN</button>
+        <button class="ev-lang-btn" id="evLangMr">मरा</button>
+      </div>
+ 
+      <div class="ev-nav-sep"></div>
+ 
+      <a class="ev-btn-contact" href="{% url 'contact' %}">Contact</a>
+ 
+    </div>
+ 
+    <button class="ev-hamburger" id="evHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+ 
+  </div>
+ 
+  <!-- Mobile nav drawer -->
+  <div class="ev-mobile-nav" id="evMobileNav">
+    <a class="ev-mobile-link" href="{% url 'home' %}">Home</a>
+    <a class="ev-mobile-link" href="{% url 'about' %}">About village</a>
+    <a class="ev-mobile-link" href="{% url 'education' %}">Education support</a>
+    <a class="ev-mobile-link" href="{% url 'agriculture' %}">Agriculture</a>
+    <a class="ev-mobile-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+    <a class="ev-mobile-link" href="{% url 'economy' %}">Economy</a>
+    <a class="ev-mobile-link" href="{% url 'contact' %}">Contact</a>
+    <div class="ev-mobile-lang">
+      <button class="ev-lang-btn ev-lang-active" id="evMobLangEn">EN</button>
+      <button class="ev-lang-btn" id="evMobLangMr">मरा</button>
+    </div>
+  </div>
+ 
+  <!-- =====================
+       HERO
+  ===================== -->
+  <div class="ev-hero">
+    <img
+      class="ev-hero-img"
+      src="{% static 'assets/img/villageimgs/homeimg5.jpg' %}"
+      alt="Village landscape"
+    />
+    <div class="ev-hero-scrim"></div>
+ 
+    <div class="ev-hero-inner">
+      <span class="ev-hero-badge">
+        <span class="ev-hero-badge-dot"></span>
+        Smart village initiative · Maharashtra
+      </span>
+      <h1 class="ev-hero-title">
+        Welcome to<br>
+        <span class="ev-hero-title-accent">My e-Village</span>
+      </h1>
+      <p class="ev-hero-sub">
+        A digital platform connecting every villager to government services,
+        education, and opportunities — right from home.
+      </p>
+      <div class="ev-hero-btns">
+        <a class="ev-hero-btn-primary" href="{% url 'education' %}">Explore services</a>
+        <a class="ev-hero-btn-secondary" href="{% url 'about' %}">About the village</a>
+      </div>
+    </div>
+ 
+    <div class="ev-hero-stats">
+      <div class="ev-hero-stat">
+        <p class="ev-hero-stat-val">4,200</p>
+        <p class="ev-hero-stat-lbl">Residents</p>
+      </div>
+      <div class="ev-hero-stat">
+        <p class="ev-hero-stat-val">14</p>
+        <p class="ev-hero-stat-lbl">Services</p>
+      </div>
+      <div class="ev-hero-stat">
+        <p class="ev-hero-stat-val">87%</p>
+        <p class="ev-hero-stat-lbl">Connected</p>
+      </div>
+    </div>
+  </div>
+ 
+  <script>
+    const ham = document.getElementById('evHamburger');
+    const mob = document.getElementById('evMobileNav');
+    ham.addEventListener('click', () => {
+      mob.classList.toggle('ev-mobile-nav--open');
+      ham.classList.toggle('ev-hamburger--open');
+    });
+
+    function makeLangToggle(a, b) {
+      const btnA = document.getElementById(a);
+      const btnB = document.getElementById(b);
+      if (!btnA || !btnB) return;
+      [btnA, btnB].forEach(btn => btn.addEventListener('click', () => {
+        btnA.classList.toggle('ev-lang-active');
+        btnB.classList.toggle('ev-lang-active');
+      }));
+    }
+    makeLangToggle('evLangEn', 'evLangMr');
+    makeLangToggle('evMobLangEn', 'evMobLangMr');
+
+    function translateTo(lang) {
+  const select = document.querySelector(".goog-te-combo");
+  if (!select) return;
+
+  select.value = lang;
+  select.dispatchEvent(new Event("change"));
+}
+
+document.getElementById("evLangEn").onclick = () => translateTo("en");
+document.getElementById("evLangMr").onclick = () => translateTo("mr");
+
+document.getElementById("evMobLangEn").onclick = () => translateTo("en");
+document.getElementById("evMobLangMr").onclick = () => translateTo("mr");
+  </script>
+ 
+ 
+  
+  <main class="main">
+
+    
+
+    <section class="stats-section">
+    <h2 class="stats-heading">At a glance</h2>
+    <p class="stats-subheading" style ="color: #1D9E75;">Key facts about our village</p>
+ 
+    <div class="stats-grid">
+ 
+      <!-- Population -->
+      <div class="stat-card accent-teal">
+        <div class="stat-icon icon-teal">
+          <i class="bi bi-people-fill"></i>
+        </div>
+        <p class="stat-label">Population</p>
+        <p class="stat-value">4,200</p>
+        <p class="stat-sub">residents registered</p>
+        <span class="badge badge-up">+2.3% this year</span>
+      </div>
+ 
+      <!-- Smart Initiative -->
+      <div class="stat-card accent-purple">
+        <div class="stat-icon icon-purple">
+          <i class="bi bi-cast"></i>
+        </div>
+        <p class="stat-label">Smart initiative</p>
+        <p class="stat-value">2021</p>
+        <p class="stat-sub">year of launch</p>
+        <span class="badge badge-up">4 yrs active</span>
+      </div>
+ 
+      <!-- Digital Services -->
+      <div class="stat-card accent-green">
+        <div class="stat-icon icon-green">
+          <i class="bi bi-broadcast"></i>
+        </div>
+        <p class="stat-label">Digital services</p>
+        <p class="stat-value">14</p>
+        <p class="stat-sub">online services available</p>
+        <span class="badge badge-up">3 new in 2026</span>
+      </div>
+ 
+      <!-- Internet Coverage -->
+      <div class="stat-card accent-coral">
+        <div class="stat-icon icon-coral">
+          <i class="bi bi-wifi"></i>
+        </div>
+        <p class="stat-label">Internet coverage</p>
+        <p class="stat-value">87%</p>
+        <p class="stat-sub">households connected</p>
+        <span class="badge badge-up">+14% vs 2023</span>
+      </div>
+ 
+      <!-- Literacy Rate -->
+      <div class="stat-card accent-pink">
+        <div class="stat-icon icon-pink">
+          <i class="bi bi-book-fill"></i>
+        </div>
+        <p class="stat-label">Literacy rate</p>
+        <p class="stat-value">71%</p>
+        <p class="stat-sub">of adult population</p>
+        <span class="badge badge-up">Above state avg</span>
+      </div>
+ 
+      <!-- Gram Panchayat Wards -->
+      <div class="stat-card accent-gray">
+        <div class="stat-icon icon-gray">
+         <i class="bi bi-bar-chart"></i>
+        </div>
+        <p class="stat-label">Gram Panchayat wards</p>
+        <p class="stat-value">9</p>
+        <p class="stat-sub">administrative wards</p>
+        <span class="badge badge-info">Est. 1956</span>
+      </div>
+ 
+    </div>
+  </section>
+
+  <section class="infra-section">
+    <div class="infra-wrapper">
+ 
+      <div class="infra-header">
+        <div>
+          <h2 class="infra-heading">
+            Smart<br>
+            <span class="infra-heading-accent">infrastructure.</span>
+          </h2>
+          <p class="infra-subheading">
+            Modernising our village through technology, clean energy, and resilient civic systems.
+          </p>
+        </div>
+        <div class="infra-tag">
+          <span class="infra-tag-dot"></span>
+          <a class="ev-nav-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+          <p>Read More</p>
+          <i class="bi bi-arrow-right"></i>
+          
+        </div>
+      </div>
+ 
+      <div class="infra-grid">
+ 
+        <!-- Solar Energy -->
+        <div class="infra-card accent-amber">
+          <div class="infra-icon-wrap icon-amber">
+            <i class="bi bi-brightness-high"></i>
+          </div>
+          <p class="infra-title">Solar energy</p>
+          <p class="infra-desc">Village-wide solar panel installations across public buildings, streetlights, and a community solar farm powering over 300 households with clean renewable energy.</p>
+          <div class="infra-features">
+            <span class="feat-pill">300+ households</span>
+            <span class="feat-pill">Solar streetlights</span>
+            <span class="feat-pill">Community farm</span>
+          </div>
+          <div class="infra-spacer"></div>
+          <div class="infra-divider"></div>
+          <div class="infra-meta">
+            <span class="infra-status status-active">
+              <span class="status-dot"></span>Active
+            </span>
+            <span class="infra-year">Since 2021</span>
+          </div>
+        </div>
+ 
+        <!-- Smart Roads -->
+        <div class="infra-card accent-gray">
+          <div class="infra-icon-wrap icon-gray">
+            <i class="bi bi-signpost"></i>
+          </div>
+          <p class="infra-title">Smart roads</p>
+          <p class="infra-desc">Upgraded internal road network with reflective lane markings, solar-powered road studs, and traffic sensors at key junctions to improve safety and flow for all commuters.</p>
+          <div class="infra-features">
+            <span class="feat-pill">14 km upgraded</span>
+            <span class="feat-pill">Road studs</span>
+            <span class="feat-pill">Traffic sensors</span>
+          </div>
+          <div class="infra-spacer"></div>
+          <div class="infra-divider"></div>
+          <div class="infra-meta">
+            <span class="infra-status status-ongoing">
+              <span class="status-dot"></span>Ongoing
+            </span>
+            <span class="infra-year">Since 2022</span>
+          </div>
+        </div>
+ 
+        <!-- Sanitation & Drainage -->
+        <div class="infra-card accent-teal">
+          <div class="infra-icon-wrap icon-teal">
+           <i class="bi bi-recycle"></i>
+          </div>
+          <p class="infra-title">Sanitation & drainage</p>
+          <p class="infra-desc">End-to-end underground drainage network across all wards, with household toilet coverage reaching 98% and a centralised waste water treatment plant serving the entire village.</p>
+          <div class="infra-features">
+            <span class="feat-pill">98% coverage</span>
+            <span class="feat-pill">Treatment plant</span>
+            <span class="feat-pill">All 9 wards</span>
+          </div>
+          <div class="infra-spacer"></div>
+          <div class="infra-divider"></div>
+          <div class="infra-meta">
+            <span class="infra-status status-active">
+              <span class="status-dot"></span>Active
+            </span>
+            <span class="infra-year">Since 2020</span>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </section>
+
+
+  <section class="eco-section">
+ 
+    <div class="eco-header">
+      <div>
+        <h2 class="eco-heading">
+          Local economy<br>
+          <span class="eco-heading-accent">spotlight.</span>
+        </h2>
+        <p class="eco-subheading">
+          Rooted in Maharashtra's fertile soil — our village thrives on sugarcane,
+          dairy, and flowers that reach markets across the state.
+        </p>
+      </div>
+      <div class="eco-pill">
+        <span class="eco-pill-dot"></span>
+       <a class="ev-nav-link" href="{% url 'economy' %}">Economy</a>
+          <p>Read More</p>
+          <i class="bi bi-arrow-right"></i>
+      </div>
+    </div>
+ 
+    <div class="eco-grid">
+ 
+      <!-- Sugarcane / Jaggery -->
+      <div class="eco-card">
+        <img
+          src="{% static 'assets/img/villageimgs/localeconomy/sugarcane-1.jpg' %}"
+          alt="Sugarcane fields in Maharashtra"
+          onerror="this.style.background='#92400e'; this.removeAttribute('src')"
+        />
+        <div class="eco-card-overlay">
+          <span class="eco-tag">Primary crop</span>
+          <p class="eco-card-title">Sugarcane & jaggery</p>
+          <p class="eco-card-desc">Grown on fertile black soil, village jaggery made via traditional kolhu presses is prized across Maharashtra.</p>
+          <div class="eco-stats-row">
+            <div class="eco-stat">
+              <span class="eco-stat-val">420+</span>
+              <span class="eco-stat-lbl">Farming families</span>
+            </div>
+            <div class="eco-stat-divider"></div>
+            <div class="eco-stat">
+              <span class="eco-stat-val">1,800 t</span>
+              <span class="eco-stat-lbl">Annual yield</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Milk & Dairy -->
+      <div class="eco-card">
+        <img
+          src="{% static 'assets/img/villageimgs/localeconomy/cows-2.jpg' %}"
+          alt="Dairy cattle in Maharashtra village"
+          onerror="this.style.background='#1e3a5f'; this.removeAttribute('src')"
+        />
+        <div class="eco-card-overlay">
+          <span class="eco-tag">Livestock</span>
+          <p class="eco-card-title">Milk & dairy</p>
+          <p class="eco-card-desc">HF and Gir cows supplying daily to cooperative centres linked to Mahanand and local dairies across the district.</p>
+          <div class="eco-stats-row">
+            <div class="eco-stat">
+              <span class="eco-stat-val">2,400 L</span>
+              <span class="eco-stat-lbl">Per day</span>
+            </div>
+            <div class="eco-stat-divider"></div>
+            <div class="eco-stat">
+              <span class="eco-stat-val">200+</span>
+              <span class="eco-stat-lbl">Households</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Floriculture -->
+      <div class="eco-card">
+        <img
+          src="{% static 'assets/img/villageimgs/localeconomy/floriculture-1.jpg' %}"
+          alt="Marigold flowers grown in Maharashtra"
+          onerror="this.style.background='#14532d'; this.removeAttribute('src')"
+        />
+        <div class="eco-card-overlay">
+          <span class="eco-tag">Floriculture</span>
+          <p class="eco-card-title">Flowers & garlands</p>
+          <p class="eco-card-desc">Marigold, jasmine, and shevanti for temple markets in Pune and Nashik, peaking during festival seasons.</p>
+          <div class="eco-stats-row">
+            <div class="eco-stat">
+              <span class="eco-stat-val">85+</span>
+              <span class="eco-stat-lbl">Growers</span>
+            </div>
+            <div class="eco-stat-divider"></div>
+            <div class="eco-stat">
+              <span class="eco-stat-val">Pune & Nashik</span>
+              <span class="eco-stat-lbl">Key markets</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </section>
+
+
+  <section class="ann-section">
+
+  <div class="ann-header">
+    <div>
+      <h2 class="ann-heading">
+        Announcements<br>
+        <span class="ann-heading-accent">&amp; news.</span>
+      </h2>
+      <p class="ann-subheading">
+        Stay informed — notices, schemes, and advisories from your Gram Panchayat.
+      </p>
+    </div>
+    <a class="ann-view-all" href="#">
+      View all
+      <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+
+  <!-- Scrolling Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker-label">
+      <span class="ticker-dot"></span>
+      Live updates
+    </div>
+    <div class="ticker-track">
+      <div class="ticker-inner">
+
+        {% for ann in announcements %}
+          <span class="ticker-item">
+            <span class="ticker-badge badge-{{ ann.category }}">{{ ann.get_category_display }}</span>
+            {{ ann.title }}
+            <span class="ticker-sep">·</span>
+          </span>
+        {% endfor %}
+
+        <!-- Loop duplicate for seamless scroll -->
+        {% for ann in announcements %}
+          <span class="ticker-item">
+            <span class="ticker-badge badge-{{ ann.category }}">{{ ann.get_category_display }}</span>
+            {{ ann.title }}
+            <span class="ticker-sep">·</span>
+          </span>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Announcement Cards -->
+  <div class="ann-grid">
+
+    {% for ann in announcements %}
+    <div class="ann-card card-{{ ann.category }}">
+      <div class="ann-card-top">
+        <span class="ann-cat-badge cat-{{ ann.category }}">{{ ann.get_category_display }}</span>
+        <span class="ann-date">{{ ann.created_at|date:"d M Y" }}</span>
+      </div>
+      <p class="ann-title">{{ ann.title }}</p>
+      <p class="ann-desc">{{ ann.description }}</p>
+      <div class="ann-footer">
+        {% if ann.expiry_date %}
+        <span class="ann-deadline">
+          <i class="bi bi-clock"></i>
+          {{ ann.expiry_date|date:"d M Y" }}
+        </span>
+        {% endif %}
+        <a class="ann-read-more" href="#">Read more
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+    {% empty %}
+    <p class="ann-empty">No announcements at the moment.</p>
+    {% endfor %}
+
+  </div>
+
+</section>
+
+  <section class="cv-section">
+ 
+    <div class="cv-header">
+      <div>
+        <span class="cv-eyebrow">Community voice</span>
+        <h2 class="cv-heading">
+          In their<br>
+          <span class="cv-heading-accent">own words.</span>
+        </h2>
+        <p class="cv-subheading">
+          Village leaders share what e-Village means for them — from the heart.
+        </p>
+      </div>
+    </div>
+ 
+    <div class="cv-strips">
+ 
+      <!-- Sarpanch -->
+      <div class="cv-strip">
+        <div class="cv-person">
+          <div class="cv-avatar av-1">सु</div>
+          <div>
+            <p class="cv-name">सुनील पाटील</p>
+            <p class="cv-desig">सरपंच, ग्रामपंचायत</p>
+          </div>
+        </div>
+        <div class="cv-quote-wrap">
+          <p class="cv-quote">"आमच्या गावाने डिजिटल युगात पाऊल टाकले आहे. ई-व्हिलेजमुळे प्रत्येक घरापर्यंत सरकारी सेवा पोहोचणे आता शक्य झाले आहे."</p>
+          <p class="cv-translation">"Our village has stepped into the digital age. Through e-Village, government services can now reach every household."</p>
+        </div>
+        <div class="cv-accent ac-1"></div>
+      </div>
+ 
+      <!-- Gram Sevak -->
+      <div class="cv-strip">
+        <div class="cv-person">
+          <div class="cv-avatar av-2">रा</div>
+          <div>
+            <p class="cv-name">राजेंद्र शिंदे</p>
+            <p class="cv-desig">ग्रामसेवक</p>
+          </div>
+        </div>
+        <div class="cv-quote-wrap">
+          <p class="cv-quote">"पूर्वी कागदपत्रांसाठी तालुक्याला जावे लागत होते. आता ऑनलाईन अर्ज केल्यावर घरबसल्या प्रमाणपत्र मिळते. काम खूपच सोपे झाले आहे."</p>
+          <p class="cv-translation">"Earlier, people had to travel to the taluka for documents. Now certificates are available at home through online applications."</p>
+        </div>
+        <div class="cv-accent ac-2"></div>
+      </div>
+ 
+      <!-- Panchayat Samiti Member -->
+      <div class="cv-strip">
+        <div class="cv-person">
+          <div class="cv-avatar av-3">अ</div>
+          <div>
+            <p class="cv-name">अनिता देशमुख</p>
+            <p class="cv-desig">पंचायत समिती सदस्य</p>
+          </div>
+        </div>
+        <div class="cv-quote-wrap">
+          <p class="cv-quote">"ई-व्हिलेजमुळे आमच्या तालुक्यातील इतर गावांनाही प्रेरणा मिळाली आहे. स्मार्ट रस्ते, सौरऊर्जा आणि डिजिटल सेवा — गाव खऱ्या अर्थाने स्मार्ट झाले आहे."</p>
+          <p class="cv-translation">"e-Village has inspired other villages in our taluka too. Smart roads, solar energy, and digital services — the village has truly become smart."</p>
+        </div>
+        <div class="cv-accent ac-3"></div>
+      </div>
+ 
+      <!-- Mahila Gat President -->
+      <div class="cv-strip">
+        <div class="cv-person">
+          <div class="cv-avatar av-4">वं</div>
+          <div>
+            <p class="cv-name">वंदना जाधव</p>
+            <p class="cv-desig">अध्यक्षा, महिला गट</p>
+          </div>
+        </div>
+        <div class="cv-quote-wrap">
+          <p class="cv-quote">"या वेबसाईटमुळे आमच्या महिला गटाला उत्पादन ऑनलाईन दाखवता येते. शहरातील लोकांना आमचे फूल आणि दुग्धजन्य पदार्थ माहीत झाले."</p>
+          <p class="cv-translation">"Through this website, our women's group can showcase products online. City people have come to know about our flowers and dairy products."</p>
+        </div>
+        <div class="cv-accent ac-4"></div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+ 
+    
+    
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+ 
+      <!-- Brand & social -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+           <i class="bi bi-house-heart-fill"></i>
+          </div>
+          <span class="footer-logo-text">My e<span class="footer-logo-accent">Village</span></span>
+        </div>
+        <p class="footer-tagline">
+          A smart village initiative bringing digital governance, clean energy,
+          and community progress to every household.
+        </p>
+        <div class="footer-social">
+          <!-- Facebook -->
+          <a class="social-btn" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i>
+          </a>
+          <!-- Instagram -->
+          <a class="social-btn" href="#" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <!-- YouTube -->
+          <a class="social-btn" href="#" aria-label="YouTube">
+            <i class="bi bi-youtube"></i>
+
+          </a>
+          <!-- WhatsApp -->
+          <a class="social-btn" href="#" aria-label="WhatsApp">
+           <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- Contact -->
+      <div>
+        <p class="footer-col-heading">Contact us</p>
+ 
+        <div class="contact-item">
+          <div class="contact-icon">
+           <i class="bi bi-telephone" style="color: aliceblue;"></i>
+          </div>
+          <div>
+            <p class="contact-label">Helpline</p>
+            <a class="contact-value" href="tel:+912012345678">+91 20 1234 5678</a>
+          </div>
+        </div>
+ 
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="bi bi-envelope-at" style="color: aliceblue;"></i>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <a class="contact-value" href="mailto:info@evillage.gov.in">info@waievillage.gov.in</a>
+          </div>
+        </div>
+ 
+        <div class="contact-item">
+          <div class="contact-icon"> 
+            <i class="bi bi-geo-alt" style="color: aliceblue;"></i>
+          </div>
+          <div>
+            <p class="contact-label">Office hours</p>
+            <p class="contact-value" style="cursor:default;">Mon–Sat, 10 AM – 5 PM</p>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Gram Panchayat info -->
+      <div>
+        <p class="footer-col-heading">Gram Panchayat</p>
+        <div class="gp-block">
+          <p class="gp-name">ग्रामपंचायत, [Wai]</p>
+          <p class="gp-sub">
+            Tal. [Haveli] · Dist. [Pune]<br>
+            Maharashtra — 411 000
+          </p>
+          <div class="gp-badge-row">
+            <span class="gp-badge">Est. 1956</span>
+            <span class="gp-badge">ISO certified</span>
+            <span class="gp-badge">Smart village 2021</span>
+            <span class="gp-badge">9 wards</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2026 <span>e-Village, [Wai Village] Gram Panchayat.</span> All rights reserved.
+      </p>
+      <div class="footer-lang">
+        <button class="lang-btn active" onclick="this.classList.add('active');this.nextElementSibling.classList.remove('active')">English</button>
+        <button class="lang-btn" onclick="this.classList.add('active');this.previousElementSibling.classList.remove('active')">मराठी</button>
+      </div>
+    </div>
+ 
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

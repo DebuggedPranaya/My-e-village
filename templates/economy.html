@@ -1,0 +1,688 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title> Economy — My e-Village</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <div id="google_translate_element" style="display:none;"></div>
+
+  
+<script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'mr',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+</head>
+
+<body class="events-page">
+
+ <div class="ev-topbar">
+ 
+    <a class="ev-logo" href="education.html">
+      <div class="ev-logo-icon">
+        <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.6"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 2L2 7v9h5v-5h4v5h5V7L9 2z"/>
+        </svg>
+      </div>
+      <span class="ev-logo-name">My e<span class="ev-logo-accent">Village</span></span>
+    </a>
+ 
+    <ul class="ev-nav">
+
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+ 
+      
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'about' %}">About village</a>
+      </li>
+
+ 
+      <li class="ev-nav-item ev-has-dropdown">
+        <span class="ev-nav-trigger">
+          Services
+          <svg class="ev-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor"
+               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 4l4 4 4-4"/>
+          </svg>
+        </span>
+        <div class="ev-dropdown">
+          <a class="ev-dropdown-link ev-active" href="{% url 'education' %}">
+            <div class="ev-dropdown-icon dd-edu">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 5l6-3 6 3-6 3-6-3z"/>
+                <path d="M6 7.5v4c0 1 1 1.5 2 1.5s2-.5 2-1.5v-4"/>
+                <path d="M14 5v4"/>
+              </svg>
+            </div>
+            Education support
+          </a>
+          <a class="ev-dropdown-link" href="{% url 'agriculture' %}">
+            <div class="ev-dropdown-icon dd-agri">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"
+                   stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 13V7"/>
+                <path d="M4 10c0-4 4-6 4-6s4 2 4 6a4 4 0 01-8 0z"/>
+              </svg>
+            </div>
+            Agriculture
+          </a>
+        </div>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'economy' %}">Economy</a>
+      </li>
+ 
+    </ul>
+ 
+    <div class="ev-nav-right">
+ 
+      <div class="ev-lang">
+        <button class="ev-lang-btn ev-lang-active" id="evLangEn">EN</button>
+        <button class="ev-lang-btn" id="evLangMr">मरा</button>
+      </div>
+ 
+      <div class="ev-nav-sep"></div>
+ 
+      <a class="ev-btn-contact" href="{% url 'contact' %}">Contact</a>
+ 
+    </div>
+ 
+    <button class="ev-hamburger" id="evHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+ 
+  </div>
+ 
+  <!-- Mobile nav drawer -->
+  <div class="ev-mobile-nav" id="evMobileNav">
+    <a class="ev-mobile-link" href="{% url 'home' %}">Home</a>
+    <a class="ev-mobile-link" href="{% url 'about' %}">About village</a>
+    <a class="ev-mobile-link" href="{% url 'education' %}">Education support</a>
+    <a class="ev-mobile-link" href="{% url 'agriculture' %}">Agriculture</a>
+    <a class="ev-mobile-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+    <a class="ev-mobile-link" href="{% url 'economy' %}">Economy</a>
+    <a class="ev-mobile-link" href="{% url 'contact' %}">Contact</a>
+    <div class="ev-mobile-lang">
+      <button class="ev-lang-btn ev-lang-active" id="evMobLangEn">EN</button>
+      <button class="ev-lang-btn" id="evMobLangMr">मरा</button>
+    </div>
+  </div>
+ 
+  
+  <script>
+    const ham = document.getElementById('evHamburger');
+    const mob = document.getElementById('evMobileNav');
+    ham.addEventListener('click', () => {
+      mob.classList.toggle('ev-mobile-nav--open');
+      ham.classList.toggle('ev-hamburger--open');
+    });
+
+    function makeLangToggle(a, b) {
+      const btnA = document.getElementById(a);
+      const btnB = document.getElementById(b);
+      if (!btnA || !btnB) return;
+      [btnA, btnB].forEach(btn => btn.addEventListener('click', () => {
+        btnA.classList.toggle('ev-lang-active');
+        btnB.classList.toggle('ev-lang-active');
+      }));
+    }
+    makeLangToggle('evLangEn', 'evLangMr');
+    makeLangToggle('evMobLangEn', 'evMobLangMr');
+ 
+  function translateTo(lang) {
+  const select = document.querySelector(".goog-te-combo");
+  if (!select) return;
+
+  select.value = lang;
+  select.dispatchEvent(new Event("change"));
+}
+
+document.getElementById("evLangEn").onclick = () => translateTo("en");
+document.getElementById("evLangMr").onclick = () => translateTo("mr");
+
+document.getElementById("evMobLangEn").onclick = () => translateTo("en");
+document.getElementById("evMobLangMr").onclick = () => translateTo("mr");
+ 
+  </script>
+
+
+  <main class="main">
+
+    <div class="ec-hero">
+    <img class="ec-hero-img"
+         src="assets/img/economy/economy-hero.jpg"
+         alt="Wai economy"
+         onerror="this.style.opacity='0'">
+    <div class="ec-hero-scrim"></div>
+ 
+    <div class="ec-hero-pills">
+      <div class="ec-hero-pill"><div class="ec-pill-dot dot-green"></div> Dairy · 4,000 L/day</div>
+      <div class="ec-hero-pill"><div class="ec-pill-dot dot-amber"></div> Agro-processing · Active</div>
+      <div class="ec-hero-pill"><div class="ec-pill-dot dot-blue"></div> Solar economy · Growing</div>
+    </div>
+ 
+    <div class="ec-hero-inner">
+      <p class="ec-hero-breadcrumb">
+        <a href="index.html">Home</a> › Economy
+      </p>
+      <h1 class="ec-hero-title">Wai's economy<br><em></em></h1>
+      <p class="ec-hero-sub">From sugarcane fields to solar rooftops — Wai's economy is diversifying rapidly, with dairy, agro-processing, and renewable energy emerging alongside traditional farming.</p>
+    </div>
+  </div>
+ 
+  <!-- ══════════════════════
+       DASHBOARD
+  ══════════════════════ -->
+  <div class="ec-dashboard">
+ 
+    <!-- Summary bar -->
+    <div class="ec-summary-bar">
+      <div class="ec-summary-card">
+        <div class="ec-summary-icon si-green">🐄</div>
+        <div>
+          <p class="ec-summary-val">4,000 L</p>
+          <p class="ec-summary-lbl">Milk produced daily</p>
+        </div>
+      </div>
+      <div class="ec-summary-card">
+        <div class="ec-summary-icon si-amber"><i class="bi bi-leaf-fill"></i></div>
+        <div>
+          <p class="ec-summary-val">~60%</p>
+          <p class="ec-summary-lbl">Workforce in agriculture</p>
+        </div>
+      </div>
+      <div class="ec-summary-card">
+        <div class="ec-summary-icon si-blue"><i class="bi bi-building-fill-gear"></i></div>
+        <div>
+          <p class="ec-summary-val">40+</p>
+          <p class="ec-summary-lbl">Local businesses</p>
+        </div>
+      </div>
+      <div class="ec-summary-card">
+        <div class="ec-summary-icon si-rose">📈</div>
+        <div>
+          <p class="ec-summary-val">↑26×</p>
+          <p class="ec-summary-lbl">Dairy output growth</p>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Main grid -->
+    <div class="ec-grid">
+ 
+     <!-- <!-- ── KEY INDUSTRIES — wide ── -->
+      <div class="ec-card ec-grid-wide">
+        <div class="ec-card-header">
+          <div class="ec-card-header-left">
+            <div class="ec-card-icon si-amber">🏭</div>
+            <div>
+              <p class="ec-card-title">Key Industries</p>
+              <p class="ec-card-subtitle">Dairy · Agro-processing · Renewable energy · Agriculture</p>
+            </div>
+          </div>
+          <span class="ec-badge badge-growth">Growing</span>
+        </div>
+        <div class="ec-card-body">
+          <div class="ec-industry-grid">
+            <div class="ec-industry-tile">
+              <span class="ec-industry-emoji">🐄</span>
+              <p class="ec-industry-name">Milk & Dairy</p>
+              <p class="ec-industry-desc">The dominant economic sector in Wai. Organised cattle farming has transformed milk production from a subsistence activity into a major commercial enterprise. The village cooperative collects and supplies milk to Pune dairies daily.</p>
+              
+            </div>
+            <div class="ec-industry-tile">
+              <span class="ec-industry-emoji">⚙️</span>
+              <p class="ec-industry-name">Agro-Processing</p>
+              <p class="ec-industry-desc">Small-scale cooperative-run processing units handle vermicomposting, biogas generation, and grain storage. These add value to farm output and reduce post-harvest losses — keeping more income within the village.</p>
+              
+            </div>
+            <div class="ec-industry-tile">
+              <span class="ec-industry-emoji">☀️</span>
+              <p class="ec-industry-name">Renewable Energy</p>
+              <p class="ec-industry-desc">Wai's 100% solar status has created a new economic layer — zero electricity costs for homes and businesses, surplus energy fed back to the grid, and reduced dependency on costly diesel for irrigation and water pumping.</p>
+              
+            </div>
+            <div class="ec-industry-tile">
+              <span class="ec-industry-emoji">🎋</span>
+              <p class="ec-industry-name">Sugarcane Farming</p>
+              <p class="ec-industry-desc">A cornerstone crop supplied to the Jawahar Shetkari Sahakari Sakhar Karkhana. The FRP rate of ₹340/quintal ensures fair compensation for farmers. Drip irrigation has improved yield per acre significantly.</p>
+              
+            </div>
+            <div class="ec-industry-tile">
+              <span class="ec-industry-emoji">🌼</span>
+              <p class="ec-industry-name">Floriculture & Fruits</p>
+              <p class="ec-industry-desc">Marigold, jasmine, and grape cultivation provide high-value income for smallholders. Flowers are sold at Pune APMC and local weekly markets. Grapes from Wai have growing export potential through Nashik channels.</p>
+              
+            </div>
+            <div class="ec-industry-tile">
+              <span class="ec-industry-emoji">🧺</span>
+              <p class="ec-industry-name">Cottage & Trade</p>
+              <p class="ec-industry-desc"> Small home-based enterprises including tailoring, food processing (pickles, papad), and local trade. Supported by Mahila Gat and the GP's self-employment schemes.</p>
+             
+            </div>
+          </div>
+ 
+          <div class="ec-divider"></div>
+          <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:12px;">Dairy output — before vs. after organised farming</p>
+          <div class="ec-dairy-bar-wrap">
+            <div class="ec-dairy-bar-label">
+              <span>150 L/day (before)</span>
+              <span>4,000 L/day (now) · 26× growth</span>
+            </div>
+            <div class="ec-dairy-track">
+              <div class="ec-dairy-before"></div>
+              <div class="ec-dairy-after"></div>
+            </div>
+            <p class="ec-dairy-bar-note">Growth achieved through organised cattle farming, cooperative milk collection, and veterinary support programmes.</p>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── EMPLOYMENT CARD ── 
+      <div class="ec-card">
+        <div class="ec-card-header">
+          <div class="ec-card-header-left">
+            <div class="ec-card-icon si-blue">👷</div>
+            <div>
+              <p class="ec-card-title">Employment & Livelihood</p>
+              <p class="ec-card-subtitle">Occupations · Workforce · Livelihood shift</p>
+            </div>
+          </div>
+          <span class="ec-badge badge-stable">Diversifying</span>
+        </div>
+        <div class="ec-card-body">
+          <div class="ec-fact-list" style="margin-bottom:20px;">
+            <div class="ec-fact">
+              <span class="ec-fact-key">Total workforce</span>
+              <span class="ec-fact-val">[Placeholder] registered workers · approx. 420 population</span>
+            </div>
+            <div class="ec-fact">
+              <span class="ec-fact-key">Primary income</span>
+              <span class="ec-fact-val">Agriculture and allied activities (farming, dairy, floriculture)</span>
+            </div>
+            <div class="ec-fact">
+              <span class="ec-fact-key">Seasonal migration</span>
+              <span class="ec-fact-val">[Placeholder] % of households report seasonal migration to Pune for construction and factory work</span>
+            </div>
+            <div class="ec-fact">
+              <span class="ec-fact-key">Women in workforce</span>
+              <span class="ec-fact-val">Significantly engaged through Mahila Gat, dairy cooperatives, and floriculture</span>
+            </div>
+          </div>
+ 
+          <div class="ec-divider"></div>
+          <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:14px;">Occupation breakdown</p>
+          <div class="ec-occupation-list">
+            <div class="ec-occupation-row">
+              <span class="ec-occupation-label">Cultivators</span>
+              <div class="ec-occupation-bar-wrap">
+                <div class="ec-occupation-track">
+                  <div class="ec-occupation-fill fill-green" style="width:58%"></div>
+                </div>
+              </div>
+              <span class="ec-occupation-pct">58%</span>
+            </div>
+            <div class="ec-occupation-row">
+              <span class="ec-occupation-label">Agricultural labour</span>
+              <div class="ec-occupation-bar-wrap">
+                <div class="ec-occupation-track">
+                  <div class="ec-occupation-fill fill-amber" style="width:18%"></div>
+                </div>
+              </div>
+              <span class="ec-occupation-pct">18%</span>
+            </div>
+            <div class="ec-occupation-row">
+              <span class="ec-occupation-label">Self-employed (non-agri)</span>
+              <div class="ec-occupation-bar-wrap">
+                <div class="ec-occupation-track">
+                  <div class="ec-occupation-fill fill-blue" style="width:14%"></div>
+                </div>
+              </div>
+              <span class="ec-occupation-pct">14%</span>
+            </div>
+            <div class="ec-occupation-row">
+              <span class="ec-occupation-label">Govt / salaried</span>
+              <div class="ec-occupation-bar-wrap">
+                <div class="ec-occupation-track">
+                  <div class="ec-occupation-fill fill-rose" style="width:7%"></div>
+                </div>
+              </div>
+              <span class="ec-occupation-pct">7%</span>
+            </div>
+            <div class="ec-occupation-row">
+              <span class="ec-occupation-label">Other / migrant</span>
+              <div class="ec-occupation-bar-wrap">
+                <div class="ec-occupation-track">
+                  <div class="ec-occupation-fill fill-gray" style="width:3%"></div>
+                </div>
+              </div>
+              <span class="ec-occupation-pct">3%</span>
+            </div>
+          </div>
+ 
+          <div class="ec-divider"></div>
+          <div class="ec-shift-callout">
+            <p class="ec-shift-callout-title">⚡ Occupational shift underway</p>
+            <p class="ec-shift-callout-body">While cultivators remain the majority, Wai is seeing a significant rise in non-agricultural self-employment — driven by digital literacy, solar energy savings, and CSC-enabled access to government schemes.</p>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- ── LOCAL BUSINESSES CARD ── 
+      <div class="ec-card">
+        <div class="ec-card-header">
+          <div class="ec-card-header-left">
+            <div class="ec-card-icon si-rose">🏪</div>
+            <div>
+              <p class="ec-card-title">Local Businesses</p>
+              <p class="ec-card-subtitle">Shops · Services · Cooperatives</p>
+            </div>
+          </div>
+          <span class="ec-badge badge-stable">40+ enterprises</span>
+        </div>
+        <div class="ec-card-body">
+          <div class="ec-biz-grid">
+            <div class="ec-biz-card">
+              <div class="ec-biz-icon">🛒</div>
+              <p class="ec-biz-name">General stores</p>
+              <p class="ec-biz-desc">Daily essentials, groceries, and household goods. Several shops operate near the GP office and village centre.</p>
+              <span class="ec-biz-tag">Retail</span>
+            </div>
+            <div class="ec-biz-card">
+              <div class="ec-biz-icon">🐄</div>
+              <p class="ec-biz-name">Milk cooperative</p>
+              <p class="ec-biz-desc">Village dairy cooperative collects 4,000 L/day and supplies to Pune. Provides fair price and daily income to farming families.</p>
+              <span class="ec-biz-tag">Cooperative</span>
+            </div>
+            <div class="ec-biz-card">
+              <div class="ec-biz-icon">🌾</div>
+              <p class="ec-biz-name">Grain storage unit</p>
+              <p class="ec-biz-desc">Cooperative-managed cold and dry grain storage reducing post-harvest losses for rice, jowar, and wheat farmers.</p>
+              <span class="ec-biz-tag">Agro-processing</span>
+            </div>
+            <div class="ec-biz-card">
+              <div class="ec-biz-icon">🧵</div>
+              <p class="ec-biz-name">Tailoring units</p>
+              <p class="ec-biz-desc">Women-run tailoring businesses supported by Mahila Gat training. Serve local demand for clothing and school uniforms.</p>
+              <span class="ec-biz-tag">Cottage industry</span>
+            </div>
+            <div class="ec-biz-card">
+              <div class="ec-biz-icon">🔧</div>
+              <p class="ec-biz-name">Agri repair shops</p>
+              <p class="ec-biz-desc">[Placeholder] Equipment repair and spare parts for farm machinery, irrigation pumps, and solar installations.</p>
+              <span class="ec-biz-tag">Services</span>
+            </div>
+            <div class="ec-biz-card">
+              <div class="ec-biz-icon">🏦</div>
+              <p class="ec-biz-name">Banking & CSC</p>
+              <p class="ec-biz-desc">Common Service Centre providing banking correspondent services, insurance, and digital payment support to residents.</p>
+              <span class="ec-biz-tag">Financial services</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+ 
+      <!-- ── INCOME & STATS — wide ── -->
+      <div class="ec-card ec-grid-wide">
+        <div class="ec-card-header">
+         <div class="ec-card-header-left">
+          <!--  <div class="ec-card-icon si-green">📊</div>
+            <div>
+              <p class="ec-card-title">Income & Development Stats</p>
+              <p class="ec-card-subtitle">Household income · BPL · Banking · Scheme coverage</p>
+            </div>
+          </div>
+          <span class="ec-badge badge-emerging">2024–25 data</span>
+        </div>
+        <div class="ec-card-body">
+          <div class="ec-stats-grid">
+            <div class="ec-stat-box">
+              <p class="ec-stat-box-val">~420</p>
+              <p class="ec-stat-box-lbl">Total population</p>
+              <p class="ec-stat-box-note">Approx. 95 households</p>
+            </div>
+            <div class="ec-stat-box">
+              <p class="ec-stat-box-val">[X]</p>
+              <p class="ec-stat-box-lbl">BPL households</p>
+              <p class="ec-stat-box-note">[Placeholder — add after GP records]</p>
+            </div>
+            <div class="ec-stat-box">
+              <p class="ec-stat-box-val">100%</p>
+              <p class="ec-stat-box-lbl">Bank account coverage</p>
+              <p class="ec-stat-box-note">Jan Dhan Yojana enrolment</p>
+            </div>
+            <div class="ec-stat-box">
+              <p class="ec-stat-box-val">₹0</p>
+              <p class="ec-stat-box-lbl">Monthly electricity bill</p>
+              <p class="ec-stat-box-note">Per household · solar-powered</p>
+            </div>
+          </div>
+ 
+          <div class="ec-divider"></div>
+          <p style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:14px;">Economic schemes active in Wai</p>
+          <div class="ec-scheme-rows">
+            <div class="ec-scheme-row">
+              <div>
+                <p class="ec-scheme-name">PM-KISAN</p>
+                <p class="ec-scheme-desc">Direct income support of ₹6,000/year to eligible farmer families</p>
+              </div>
+              <div>
+                <p class="ec-scheme-beneficiaries">[X] families</p>
+                <p class="ec-scheme-beneficiaries-lbl">Enrolled</p>
+              </div>
+              <span class="ec-scheme-pill sp-central">Central</span>
+            </div>
+            <div class="ec-scheme-row">
+              <div>
+                <p class="ec-scheme-name">MGNREGS (Job Card Scheme)</p>
+                <p class="ec-scheme-desc">100 days of guaranteed wage employment per household per year</p>
+              </div>
+              <div>
+                <p class="ec-scheme-beneficiaries">[X] families</p>
+                <p class="ec-scheme-beneficiaries-lbl">Active job cards</p>
+              </div>
+              <span class="ec-scheme-pill sp-central">Central</span>
+            </div> -->
+            <div class="ec-scheme-row">
+              <div>
+                <p class="ec-scheme-name">PM Surya Ghar: Muft Bijli Yojana</p>
+                <p class="ec-scheme-desc">Free rooftop solar panels providing up to 300 units free power monthly</p>
+              </div>
+              <div>
+                <p class="ec-scheme-beneficiaries">97 homes</p>
+                <p class="ec-scheme-beneficiaries-lbl">Connected</p>
+              </div>
+              <span class="ec-scheme-pill sp-central">Central</span>
+            </div>
+            <div class="ec-scheme-row">
+              <div>
+                <p class="ec-scheme-name">Saur Gram Yojana (Maharashtra)</p>
+                <p class="ec-scheme-desc">State-level solar village programme enabling 100% solar status for Wai</p>
+              </div>
+              <div>
+                <p class="ec-scheme-beneficiaries">Whole village</p>
+                <p class="ec-scheme-beneficiaries-lbl">Beneficiary</p>
+              </div>
+              <span class="ec-scheme-pill sp-state">State</span>
+            </div>
+            <div class="ec-scheme-row">
+              <div>
+                <p class="ec-scheme-name">Jan Dhan Yojana</p>
+                <p class="ec-scheme-desc">Zero-balance bank accounts enabling direct benefit transfers and digital payments</p>
+              </div>
+              <div>
+                <p class="ec-scheme-beneficiaries">100%</p>
+                <p class="ec-scheme-beneficiaries-lbl">Household coverage</p>
+              </div>
+              <span class="ec-scheme-pill sp-central">Central</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+ 
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+ 
+      <!-- Brand & social -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-icon">
+           <i class="bi bi-house-heart-fill"></i>
+          </div>
+          <span class="footer-logo-text">My e<span class="footer-logo-accent">Village</span></span>
+        </div>
+        <p class="footer-tagline">
+          A smart village initiative bringing digital governance, clean energy,
+          and community progress to every household.
+        </p>
+        <div class="footer-social">
+          <!-- Facebook -->
+          <a class="social-btn" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i>
+          </a>
+          <!-- Instagram -->
+          <a class="social-btn" href="#" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <!-- YouTube -->
+          <a class="social-btn" href="#" aria-label="YouTube">
+            <i class="bi bi-youtube"></i>
+
+          </a>
+          <!-- WhatsApp -->
+          <a class="social-btn" href="#" aria-label="WhatsApp">
+           <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+ 
+      <!-- Contact -->
+      <div>
+        <p class="footer-col-heading">Contact us</p>
+ 
+        <div class="contact-item">
+          <div class="contact-icon">
+           <i class="bi bi-telephone" style="color: aliceblue;"></i>
+          </div>
+          <div>
+            <p class="contact-label">Helpline</p>
+            <a class="contact-value" href="tel:+912012345678">+91 20 1234 5678</a>
+          </div>
+        </div>
+ 
+        <div class="contact-item">
+          <div class="contact-icon">
+            <i class="bi bi-envelope-at" style="color: aliceblue;"></i>
+          </div>
+          <div>
+            <p class="contact-label">Email</p>
+            <a class="contact-value" href="mailto:info@evillage.gov.in">info@waievillage.gov.in</a>
+          </div>
+        </div>
+ 
+        <div class="contact-item">
+          <div class="contact-icon"> 
+            <i class="bi bi-geo-alt" style="color: aliceblue;"></i>
+          </div>
+          <div>
+            <p class="contact-label">Office hours</p>
+            <p class="contact-value" style="cursor:default;">Mon–Sat, 10 AM – 5 PM</p>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- Gram Panchayat info -->
+      <div>
+        <p class="footer-col-heading">Gram Panchayat</p>
+        <div class="gp-block">
+          <p class="gp-name">ग्रामपंचायत, [गावाचे नाव]</p>
+          <p class="gp-sub">
+            Tal. [Taluka] · Dist. [District]<br>
+            Maharashtra — 411 000
+          </p>
+          <div class="gp-badge-row">
+            <span class="gp-badge">Est. 1956</span>
+            <span class="gp-badge">ISO certified</span>
+            <span class="gp-badge">Smart village 2021</span>
+            <span class="gp-badge">9 wards</span>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2026 <span>e-Village, [Wai Village] Gram Panchayat.</span> All rights reserved.
+      </p>
+      <div class="footer-lang">
+        <button class="lang-btn active" onclick="this.classList.add('active');this.nextElementSibling.classList.remove('active')">English</button>
+        <button class="lang-btn" onclick="this.classList.add('active');this.previousElementSibling.classList.remove('active')">मराठी</button>
+      </div>
+    </div>
+ 
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

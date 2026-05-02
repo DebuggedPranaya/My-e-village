@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <title>My e-Village | Digital Village Platform</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22currentColor%22%20class%3D%22bi%20bi-house-heart-fill%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M7.293%201.5a1%201%200%200%201%201.414%200L11%203.793V2.5a.5.5%200%200%201%20.5-.5h1a.5.5%200%200%201%20.5.5v3.293l2.354%202.353a.5.5%200%200%201-.708.707L8%202.207%201.354%208.853a.5.5%200%201%201-.708-.707z%22/%3E%3Cpath%20d%3D%22m14%209.293-6-6-6%206V13.5A1.5%201.5%200%200%200%203.5%2015h9a1.5%201.5%200%200%200%201.5-1.5zm-6-.811c1.664-1.673%205.825%201.254%200%205.018-5.825-3.764-1.664-6.691%200-5.018%22/%3E%3C/svg%3E">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+  <div id="google_translate_element" style="display:none;"></div>
+
+  <script>
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'mr',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+ 
+</head>
+<body>
+    <!-- ======= Header ======= -->
+   <div class="ev-topbar">
+ 
+    <a class="ev-logo" href="{% url 'home' %}">
+      <div class="ev-logo-icon">
+        
+        <i class="bi bi-house-heart-fill"></i>
+      </div>
+      <span class="ev-logo-name">My e<span class="ev-logo-accent">Village</span></span>
+    </a>
+ 
+    <ul class="ev-nav">
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link ev-active" href="{% url 'home' %}">Home</a>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'about' %}">About village</a>
+      </li>
+ 
+      <li class="ev-nav-item ev-has-dropdown">
+        <span class="ev-nav-trigger">
+          Services
+          <i class="bi bi-arrow-down"></i>
+        </span>
+        <div class="ev-dropdown">
+          <a class="ev-dropdown-link" href="{% url 'education' %}">
+            <div class="ev-dropdown-icon dd-edu">
+              <i class="bi bi-journal-text"></i>
+            </div>
+            Education support
+          </a>
+          <a class="ev-dropdown-link" href="{% url 'agriculture' %}">
+            <div class="ev-dropdown-icon dd-agri">
+              <i class="bi bi-leaf"></i>
+            </div>
+            Agriculture
+          </a>
+        </div>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+      </li>
+ 
+      <li class="ev-nav-item">
+        <a class="ev-nav-link" href="{% url 'economy' %}">Economy</a>
+      </li>
+ 
+    </ul>
+ 
+    <div class="ev-nav-right">
+ 
+      <div class="ev-lang">
+        <button class="ev-lang-btn ev-lang-active" id="evLangEn">EN</button>
+        <button class="ev-lang-btn" id="evLangMr">मरा</button>
+      </div>
+ 
+      <div class="ev-nav-sep"></div>
+ 
+      <a class="ev-btn-contact" href="{% url 'contact' %}">Contact</a>
+ 
+    </div>
+ 
+    <button class="ev-hamburger" id="evHamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+ 
+  </div>
+ 
+  <!-- Mobile nav drawer -->
+  <div class="ev-mobile-nav" id="evMobileNav">
+    <a class="ev-mobile-link" href="{% url 'home' %}">Home</a>
+    <a class="ev-mobile-link" href="{% url 'about' %}">About village</a>
+    <a class="ev-mobile-link" href="{% url 'education' %}">Education support</a>
+    <a class="ev-mobile-link" href="{% url 'agriculture' %}">Agriculture</a>
+    <a class="ev-mobile-link" href="{% url 'infrastructure' %}">Infrastructure</a>
+    <a class="ev-mobile-link" href="{% url 'economy' %}">Economy</a>
+    <a class="ev-mobile-link" href="{% url 'contact' %}">Contact</a>
+    <div class="ev-mobile-lang">
+      <button class="ev-lang-btn ev-lang-active" id="evMobLangEn">EN</button>
+      <button class="ev-lang-btn" id="evMobLangMr">मरा</button>
+    </div>
+  </div>
+
+  <script>
+    const ham = document.getElementById('evHamburger');
+    const mob = document.getElementById('evMobileNav');
+    if (ham) ham.addEventListener('click', () => {
+      mob.classList.toggle('ev-mobile-nav--open');
+      ham.classList.toggle('ev-hamburger--open');
+    });
+
+    function makeLangToggle(a, b) {
+      const btnA = document.getElementById(a);
+      const btnB = document.getElementById(b);
+      if (!btnA || !btnB) return;
+      [btnA, btnB].forEach(btn => btn.addEventListener('click', () => {
+        btnA.classList.toggle('ev-lang-active');
+        btnB.classList.toggle('ev-lang-active');
+      }));
+    }
+    makeLangToggle('evLangEn', 'evLangMr');
+    makeLangToggle('evMobLangEn', 'evMobLangMr');
+
+
+     function translateTo(lang) {
+  const select = document.querySelector(".goog-te-combo");
+  if (!select) return;
+
+  select.value = lang;
+  select.dispatchEvent(new Event("change"));
+}
+
+document.getElementById("evLangEn").onclick = () => translateTo("en");
+
+
+  </script>
+ 
+  
+
+</body>
+</html>
